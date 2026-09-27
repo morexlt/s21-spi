@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1260" viewBox="0 0 1600 1260"><rect width="100%" height="100%" fill="white"/>
+<rect x="320" y="30" width="1020" height="1190" fill="#F7FBFA" stroke="#087F73" stroke-width="3"/>
+<text x="830" y="86" font-family="Arial,sans-serif" font-size="36" font-weight="700" text-anchor="middle" fill="#173B3A">Sistema Propiera</text>
+<ellipse cx="145.0" cy="442.0" rx="24.0" ry="24.0" fill="white" stroke="#087F73" stroke-width="3"/>
+<polyline points="145,466 145,545" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="102,500 188,500" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="110,600 145,545 180,600" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="145" y="644" font-family="Arial,sans-serif" font-size="28" font-weight="700" text-anchor="middle" fill="#173B3A">Administrativo</text>
+<ellipse cx="1460.0" cy="792.0" rx="24.0" ry="24.0" fill="white" stroke="#087F73" stroke-width="3"/>
+<polyline points="1460,816 1460,895" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1417,850 1503,850" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1425,950 1460,895 1495,950" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="1460" y="994" font-family="Arial,sans-serif" font-size="28" font-weight="700" text-anchor="middle" fill="#173B3A">Martillero</text>
+<ellipse cx="590.0" cy="207.5" rx="200.0" ry="57.5" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="590.0" y="197" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">CU-00</text>
+<text x="590.0" y="235" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">Datos maestros</text>
+<ellipse cx="590.0" cy="412.5" rx="200.0" ry="57.5" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="590.0" y="402" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">CU-01</text>
+<text x="590.0" y="440" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">Registrar contrato</text>
+<ellipse cx="1070.0" cy="412.5" rx="200.0" ry="57.5" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1070.0" y="402" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">CU-07</text>
+<text x="1070.0" y="440" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">Generar cuotas</text>
+<ellipse cx="590.0" cy="647.5" rx="200.0" ry="57.5" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="590.0" y="637" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">CU-02</text>
+<text x="590.0" y="675" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">Registrar pago</text>
+<ellipse cx="590.0" cy="857.5" rx="200.0" ry="57.5" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="590.0" y="847" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">CU-03</text>
+<text x="590.0" y="885" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">Registrar gasto</text>
+<ellipse cx="1070.0" cy="717.5" rx="200.0" ry="57.5" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1070.0" y="707" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">CU-04</text>
+<text x="1070.0" y="745" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">Generar liquidación</text>
+<ellipse cx="1070.0" cy="947.5" rx="200.0" ry="57.5" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1070.0" y="937" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">CU-05</text>
+<text x="1070.0" y="975" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">Aprobar / registrar pago</text>
+<ellipse cx="835.0" cy="1127.5" rx="215.0" ry="57.5" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="835.0" y="1117" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">CU-06</text>
+<text x="835.0" y="1155" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">Consultar saldos</text>
+<polyline points="190,500 285,500 285,207 390,207" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="190,500 285,500 285,412 390,412" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="190,500 285,500 285,647 390,647" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="190,500 285,500 285,857 390,857" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="190,500 245,500 245,1127 620,1127" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1420,850 1380,850 1380,717 1270,717" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1420,850 1380,850 1380,947 1270,947" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1420,850 1400,850 1400,1127 1050,1127" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="790,412 870,412" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<polyline points="853.325931324083,421.10908523347985 870,412 853.325931324083,402.89091476652015" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="835" y="317" font-family="Arial,sans-serif" font-size="27" font-weight="400" text-anchor="middle" fill="#173B3A">«include»</text>
+</svg>

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1980" viewBox="0 0 1600 1980"><rect width="100%" height="100%" fill="white"/>
+<rect x="60" y="70" width="430" height="225" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="60" y="70" width="430" height="60" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="275.0" y="113" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#173B3A">PROPIETARIO</text>
+<text x="76" y="176" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">PK id</text>
+<text x="76" y="215" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">UQ documento</text>
+<text x="76" y="254" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">nombre · contacto · activo</text>
+<rect x="585" y="70" width="430" height="225" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="585" y="70" width="430" height="60" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="800.0" y="113" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#173B3A">INQUILINO</text>
+<text x="601" y="176" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">PK id</text>
+<text x="601" y="215" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">UQ documento</text>
+<text x="601" y="254" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">nombre · contacto · activo</text>
+<rect x="1110" y="70" width="430" height="225" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="1110" y="70" width="430" height="60" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1325.0" y="113" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#173B3A">USUARIO [U]</text>
+<text x="1126" y="176" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">PK id</text>
+<text x="1126" y="215" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">nombre · rol · activo</text>
+<rect x="60" y="400" width="430" height="230" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="60" y="400" width="430" height="60" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="275.0" y="443" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#173B3A">PROPIEDAD</text>
+<text x="76" y="506" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">PK id · UQ codigo</text>
+<text x="76" y="545" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">FK propietario_id</text>
+<text x="76" y="584" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">direccion · activo</text>
+<rect x="585" y="400" width="430" height="295" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="585" y="400" width="430" height="60" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="800.0" y="443" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#173B3A">CONTRATO</text>
+<text x="601" y="504" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">PK id</text>
+<text x="601" y="535" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">FK propiedad_id · inquilino_id</text>
+<text x="601" y="566" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">FK creado_por [U]</text>
+<text x="601" y="597" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">inicio · fin · importe_inicial</text>
+<text x="601" y="628" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">comision_pct · ajuste_meses</text>
+<text x="601" y="659" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">dia_vencimiento · regla_mora</text>
+<text x="601" y="690" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">creado_en</text>
+<rect x="1110" y="400" width="430" height="295" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="1110" y="400" width="430" height="60" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1325.0" y="443" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#173B3A">LIQUIDACION</text>
+<text x="1126" y="506" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">PK id · FK propietario_id</text>
+<text x="1126" y="545" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">FK creado_por [U]</text>
+<text x="1126" y="584" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">FK aprobado_por [U]</text>
+<text x="1126" y="623" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">periodo · estado · pagado_en</text>
+<text x="1126" y="662" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">UQ propietario_id + periodo</text>
+<rect x="60" y="810" width="430" height="250" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="60" y="810" width="430" height="60" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="275.0" y="853" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#173B3A">GASTO</text>
+<text x="76" y="916" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">PK id · FK contrato_id</text>
+<text x="76" y="955" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">FK registrado_por [U]</text>
+<text x="76" y="994" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">periodo · fecha · concepto</text>
+<text x="76" y="1033" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">importe · descontable</text>
+<rect x="585" y="810" width="430" height="250" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="585" y="810" width="430" height="60" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="800.0" y="853" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#173B3A">CUOTA</text>
+<text x="601" y="916" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">PK id · FK contrato_id</text>
+<text x="601" y="955" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">periodo · vencimiento</text>
+<text x="601" y="994" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">importe</text>
+<text x="601" y="1033" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">UQ contrato_id + periodo</text>
+<rect x="60" y="1190" width="430" height="245" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="60" y="1190" width="430" height="60" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="275.0" y="1233" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#173B3A">LIQUIDACION_GASTO</text>
+<text x="76" y="1296" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">FK liquidacion_id</text>
+<text x="76" y="1335" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">PK/FK gasto_id</text>
+<text x="76" y="1374" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">importe_asignado</text>
+<rect x="585" y="1190" width="430" height="265" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="585" y="1190" width="430" height="60" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="800.0" y="1233" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#173B3A">PAGO</text>
+<text x="601" y="1296" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">PK id · FK cuota_id</text>
+<text x="601" y="1335" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">FK registrado_por [U]</text>
+<text x="601" y="1374" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">fecha · capital · mora</text>
+<text x="601" y="1413" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">medio · UQ referencia</text>
+<text x="601" y="1452" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">registrado_en</text>
+<rect x="1110" y="1190" width="430" height="265" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="1110" y="1190" width="430" height="60" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1325.0" y="1233" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#173B3A">LIQUIDACION_COBRO</text>
+<text x="1126" y="1296" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">FK liquidacion_id</text>
+<text x="1126" y="1335" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">PK/FK pago_id</text>
+<text x="1126" y="1374" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">capital_asignado</text>
+<text x="1126" y="1413" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">mora_asignada · comision</text>
+<polyline points="275,295 275,400" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="290" y="335" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="290" y="386" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="800,295 800,400" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="815" y="335" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="815" y="386" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="490,520 585,520" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="500" y="505" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="520" y="558" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="800,695 800,810" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="815" y="733" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="815" y="795" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1..*</text>
+<polyline points="650,695 650,755 275,755 275,810" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="660" y="733" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="290" y="795" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="800,1060 800,1190" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="815" y="1099" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="815" y="1172" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="275,1060 275,1190" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="290" y="1099" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="290" y="1172" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">0..1</text>
+<polyline points="1015,1320 1110,1320" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="1026" y="1304" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="1045" y="1359" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">0..1</text>
+<polyline points="1325,695 1325,1190" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="1340" y="736" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="1340" y="1172" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="275,70 275,25 1575,25 1575,515 1540,515" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="290" y="61" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="1545" y="557" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="1540,630 1575,630 1575,1535 275,1535 275,1435" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="1548" y="674" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="290" y="1474" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<rect x="60" y="1610" width="1480" height="285" fill="#F7FBFA" stroke="#087F73" stroke-width="3"/>
+<text x="85" y="1660" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="start" fill="#173B3A">Relaciones con USUARIO: claves foráneas identificadas con [U]</text>
+<text x="85" y="1717" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">contrato.creado_por</text>
+<text x="85" y="1760" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">pago.registrado_por</text>
+<text x="85" y="1803" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">gasto.registrado_por</text>
+<text x="800" y="1717" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">liquidacion.creado_por</text>
+<text x="800" y="1760" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">liquidacion.aprobado_por (opcional)</text>
+<text x="85" y="1859" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">Cada registro identifica un usuario; un usuario puede registrar varios movimientos.</text>
+<text x="800" y="1954" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">PK: clave primaria · FK: clave foránea · UQ: clave única · 0..*: cero o varios</text>
+</svg>

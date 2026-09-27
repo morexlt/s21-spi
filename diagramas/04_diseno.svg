@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1260" viewBox="0 0 1600 1260"><rect width="100%" height="100%" fill="white"/>
+<rect x="60" y="40" width="710" height="240" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="60" y="40" width="710" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="415.0" y="84" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">PrincipalVista «JFrame»</text>
+<text x="80" y="150" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">- contrato: FormularioContrato</text>
+<text x="80" y="191" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">- pago: FormularioPago</text>
+<text x="80" y="232" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">+ cuotaSeleccionada(): Cuota</text>
+<rect x="830" y="40" width="710" height="240" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="830" y="40" width="710" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1185.0" y="84" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">AlquilerControlador</text>
+<text x="850" y="150" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">- servicio: AlquilerService</text>
+<text x="850" y="191" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">- ventana: PrincipalVista</text>
+<text x="850" y="232" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">+ iniciar(): void</text>
+<polyline points="830,155 770,155" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="786.674068675917,145.89091476652015 770,155 786.674068675917,164.10908523347985" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="60" y="420" width="710" height="280" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="60" y="420" width="710" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="415.0" y="464" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">AlquilerService</text>
+<text x="80" y="530" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">- operaciones: OperacionDao</text>
+<text x="80" y="571" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">+ registrarContrato(alta, usuario): long</text>
+<text x="80" y="612" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">+ registrarPago(...): long</text>
+<text x="80" y="653" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">+ consultarCuotas(): List&lt;Cuota&gt;</text>
+<rect x="830" y="420" width="710" height="300" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="830" y="420" width="710" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1185.0" y="464" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">AltaContrato «record»</text>
+<text x="850" y="529" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- propiedad, inquilino: long</text>
+<text x="850" y="569" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- inicio, fin: LocalDate</text>
+<text x="850" y="609" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- importe, comision: BigDecimal</text>
+<text x="850" y="649" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- ajusteMeses, diaVencimiento: int</text>
+<text x="850" y="689" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- reglaMora: String</text>
+<polyline points="1185,280 1185,345 415,345 415,420" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="405.89091476652015,403.32593132408294 415,420 424.10908523347985,403.32593132408294" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="770,550 830,550" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<polyline points="813.325931324083,559.1090852334798 830,550 813.325931324083,540.8909147665202" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="60" y="860" width="710" height="250" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="60" y="860" width="710" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="415.0" y="904" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">OperacionDao</text>
+<text x="80" y="969" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">+ bloquearPropiedad(...): boolean</text>
+<text x="80" y="1009" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">+ contratoSuperpuesto(...): boolean</text>
+<text x="80" y="1049" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">+ insertarContrato(...): long</text>
+<text x="80" y="1089" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">+ insertarPago(...): long</text>
+<rect x="830" y="860" width="710" height="250" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="830" y="860" width="710" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1185.0" y="904" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">BaseDatos</text>
+<text x="850" y="969" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">+ abrir(): Connection</text>
+<text x="850" y="1009" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">+ preparar(...): PreparedStatement</text>
+<text x="850" y="1049" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">+ insertar(...): long</text>
+<text x="850" y="1089" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">+ consultar(...): List&lt;List&lt;String&gt;&gt;</text>
+<polyline points="415,700 415,860" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="405.89091476652015,843.325931324083 415,860 424.10908523347985,843.325931324083" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="770,985 830,985" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="813.325931324083,994.1090852334798 830,985 813.325931324083,975.8909147665202" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="800" y="1188" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="middle" fill="#173B3A">PropieraApp inicia LoginVista y el controlador; los DAO utilizan JDBC.</text>
+</svg>

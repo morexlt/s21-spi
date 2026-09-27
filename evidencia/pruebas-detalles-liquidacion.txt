@@ -1,0 +1,5 @@
+LQ01 pago no reutilizable: APROBADO (clave primaria rechaza duplicado).
+LQ02 gasto no reutilizable: APROBADO (clave primaria rechaza duplicado).
+LQ03 neto: 100000 - 5000 - 1000 = 94000.00. APROBADO.
+LQ04 operaciones revertidas: sin liquidaciones ni gastos residuales. APROBADO.
+Las pruebas verifican restricciones SQL; el servicio de cierre sigue pendiente.

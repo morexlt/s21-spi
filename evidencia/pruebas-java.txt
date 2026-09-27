@@ -1,0 +1,25 @@
+PASS CP01 alta válida
+PASS CP02 include genera 12 cuotas
+PASS CP03 primer tramo conocido y siguiente sin importe
+PASS CP04 contrato superpuesto
+PASS CP05 propiedad inexistente
+PASS CP06 importe cero
+PASS CP07 propietario inactivo
+PASS CP08 sin altas residuales
+PASS CP09 pago parcial
+PASS CP10 referencia duplicada
+PASS CP11 sobrepago
+PASS CP12 cancelación y mora separada
+PASS CP13 cuota pagada
+PASS CP14 cuota pendiente de ajuste
+PASS CP15 cuota inexistente
+PASS CP16 mora negativa
+PASS CP17 ajuste semestral
+PASS CP18 UTF-8
+PASS CP19 integridad referencial impide borrar contrato
+PASS CP20 CHECK impide cuota negativa
+PASS CP21 decimal y redondeo
+PASS CP22 pago anterior al contrato
+PASS CP23 altas simultáneas: sólo una aceptada
+PASS CP24 cobros simultáneos: sólo uno aceptado
+RESULTADO: 24 verificaciones aprobadas.

@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: ${PROPIERA_MYSQL_ROOT_PASSWORD:?Definir una clave local}
+      MYSQL_DATABASE: propiera_ap2
+      MYSQL_USER: propiera
+      MYSQL_PASSWORD: ${PROPIERA_DB_PASSWORD:?Definir una clave local}
+    ports:
+      - "127.0.0.1:33316:3306"
+    volumes:
+      - propiera_ap2_data:/var/lib/mysql
+      - ./sql/01_esquema.sql:/docker-entrypoint-initdb.d/01_esquema.sql:ro
+      - ./sql/02_datos_demo.sql:/docker-entrypoint-initdb.d/02_datos_demo.sql:ro
+volumes:
+  propiera_ap2_data:

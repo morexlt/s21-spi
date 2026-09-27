@@ -1,0 +1,16 @@
+PASS SW01 administrativo habilitado
+PASS SW02 martillero sólo consulta
+PASS SW03 contraseña incorrecta rechazada
+PASS SW04 usuario desconocido rechazado
+PASS SW05 catálogo con propietario y caracteres españoles
+PASS SW06 importe con coma decimal
+PASS SW07 formato monetario inválido rechazado en servicio y controlador
+PASS SW08 permiso de contrato verificado en servicio
+PASS SW09 permiso de pago verificado en servicio
+PASS SW10 actualización conserva selección por ID o queda sin selección
+PASS SW11 cobro seleccionado
+PASS SW12 formulario de cobro limpio
+PASS SW13 cuota sin ajuste visible y no cobrable
+PASS SW14 tabla numérica, ordenable y no editable
+PASS SW15 cuota pagada no cobrable
+RESULTADO: 15 verificaciones Swing y permisos aprobadas.

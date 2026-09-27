@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1430" viewBox="0 0 1600 1430"><rect width="100%" height="100%" fill="white"/>
+<rect x="7.5" y="35" width="185.0" height="77" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="100" y="80" font-family="Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#173B3A">Administrativo</text>
+<polyline points="100,112 100,1350" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<rect x="240.0" y="35" width="260.0" height="77" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="370" y="80" font-family="Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#173B3A">FormularioContrato</text>
+<polyline points="370,112 370,1350" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<rect x="550.0" y="35" width="260.0" height="77" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="680" y="80" font-family="Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#173B3A">AlquilerControlador</text>
+<polyline points="680,112 680,1350" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<rect x="860.0" y="35" width="260.0" height="77" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="990" y="80" font-family="Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#173B3A">AlquilerService</text>
+<polyline points="990,112 990,1350" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<rect x="1260.0" y="35" width="260.0" height="77" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1390" y="80" font-family="Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#173B3A">DAO / MySQL</text>
+<polyline points="1390,112 1390,1350" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<polyline points="100,205 370,205" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="353.32593132408294,214.10908523347985 370,205 353.32593132408294,195.89091476652015" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="235.0" y="186" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">Completar y guardar</text>
+<polyline points="370,300 680,300" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="663.325931324083,309.10908523347985 680,300 663.325931324083,290.89091476652015" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="525.0" y="281" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">Evento del botón</text>
+<polyline points="680,410 990,410" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="973.325931324083,419.10908523347985 990,410 973.325931324083,400.89091476652015" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="835.0" y="391" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">registrarContrato(alta, usuario)</text>
+<polyline points="990,530 1390,530" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1373.3259313240828,539.1090852334798 1390,530 1373.3259313240828,520.8909147665202" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="1190.0" y="511" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">Transacción; permisos y bloqueo</text>
+<polyline points="990,655 1390,655" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1373.3259313240828,664.1090852334798 1390,655 1373.3259313240828,645.8909147665202" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="1190.0" y="636" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">Verificar disponibilidad</text>
+<polyline points="990,770 1390,770" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1373.3259313240828,779.1090852334798 1390,770 1373.3259313240828,760.8909147665202" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="1190.0" y="751" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">INSERT contrato</text>
+<rect x="860" y="830" width="680" height="210" fill="white" stroke="#087F73" stroke-width="3"/>
+<text x="880" y="870" font-family="Arial,sans-serif" font-size="25" font-weight="700" text-anchor="start" fill="#173B3A">loop [cada mes de vigencia]</text>
+<polyline points="990,960 1390,960" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1373.3259313240828,969.1090852334798 1390,960 1373.3259313240828,950.8909147665202" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="1190.0" y="941" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">CU-07: INSERT cuota</text>
+<polyline points="990,1120 1390,1120" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1373.3259313240828,1129.1090852334798 1390,1120 1373.3259313240828,1110.8909147665202" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="1190.0" y="1101" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">COMMIT</text>
+<polyline points="990,1215 680,1215" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<polyline points="696.674068675917,1205.8909147665202 680,1215 696.674068675917,1224.1090852334798" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="835.0" y="1196" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">ID del contrato</text>
+<polyline points="680,1310 370,1310" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<polyline points="386.67406867591706,1300.8909147665202 370,1310 386.67406867591706,1319.1090852334798" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="525.0" y="1291" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">Mostrar confirmación</text>
+<text x="800" y="1408" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="middle" fill="#173B3A">Ante un error: ROLLBACK. Contrato y cuotas se guardan juntos.</text>
+</svg>

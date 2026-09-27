@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1060" viewBox="0 0 1600 1060"><rect width="100%" height="100%" fill="white"/>
+<rect x="50" y="35" width="680" height="180" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="50" y="35" width="680" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="390.0" y="79" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">«boundary» FormularioContrato</text>
+<text x="70" y="144" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">Solicitar condiciones y participantes.</text>
+<text x="70" y="184" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">Mostrar validaciones y confirmación.</text>
+<rect x="870" y="35" width="680" height="180" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="870" y="35" width="680" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1210.0" y="79" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">«control» RegistrarContrato</text>
+<text x="890" y="144" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">Validar disponibilidad y condiciones.</text>
+<text x="890" y="184" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">Coordinar contrato y generación de cuotas.</text>
+<polyline points="730,125 870,125" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="853.325931324083,134.10908523347985 870,125 853.325931324083,115.89091476652014" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="50" y="330" width="680" height="210" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="50" y="330" width="680" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="390.0" y="374" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">«entity» Contrato</text>
+<text x="70" y="438" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Vigencia · alquiler inicial · comisión.</text>
+<text x="70" y="477" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Periodicidad de ajuste y regla de mora.</text>
+<text x="70" y="516" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Propiedad e inquilino.</text>
+<rect x="870" y="330" width="680" height="210" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="870" y="330" width="680" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1210.0" y="374" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">«entity» Cuota</text>
+<text x="890" y="438" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Período · vencimiento · importe.</text>
+<text x="890" y="477" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Importe futuro pendiente de confirmar.</text>
+<text x="890" y="516" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Saldo de capital derivado de sus pagos.</text>
+<polyline points="1210,215 1210,270 390,270 390,330" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="380.89091476652015,313.32593132408294 390,330 399.10908523347985,313.32593132408294" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1210,215 1210,330" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1200.8909147665202,313.32593132408294 1210,330 1219.1090852334798,313.32593132408294" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="730,430 870,430" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="753" y="411" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="815" y="411" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">1..*</text>
+<rect x="50" y="780" width="430" height="245" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="50" y="780" width="430" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="265.0" y="824" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">«boundary» RegistroPago</text>
+<text x="70" y="888" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Seleccionar cuota.</text>
+<text x="70" y="927" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Cargar capital, mora,</text>
+<text x="70" y="966" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">medio y referencia.</text>
+<rect x="585" y="780" width="430" height="245" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="585" y="780" width="430" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="800.0" y="824" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">«control» RegistrarPago</text>
+<text x="605" y="888" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Validar saldo.</text>
+<text x="605" y="927" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Registrar Pago.</text>
+<text x="605" y="966" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Actualizar la consulta.</text>
+<rect x="1110" y="780" width="430" height="245" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="1110" y="780" width="430" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1325.0" y="824" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">«entity» Pago</text>
+<text x="1130" y="888" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Fecha · capital · mora.</text>
+<text x="1130" y="927" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Medio · referencia.</text>
+<text x="1130" y="966" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">Usuario y fecha de registro.</text>
+<polyline points="480,890 585,890" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="568.325931324083,899.1090852334798 585,890 568.325931324083,880.8909147665202" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="800,780 800,490 870,490" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="853.325931324083,499.10908523347985 870,490 853.325931324083,480.89091476652015" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1015,890 1110,890" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1093.3259313240828,899.1090852334798 1110,890 1093.3259313240828,880.8909147665202" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1325,540 1325,780" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="1345" y="579" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="1345" y="763" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+</svg>

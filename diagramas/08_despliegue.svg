@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1060" viewBox="0 0 1600 1060"><rect width="100%" height="100%" fill="white"/>
+<rect x="80" y="45" width="1440" height="910" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="80" y="45" width="1440" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="800.0" y="89" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">«device» Computadora de desarrollo</text>
+<text x="100" y="157" font-family="Arial,sans-serif" font-size="32" font-weight="400" text-anchor="start" fill="#173B3A">Entorno local de pruebas con datos ficticios.</text>
+<rect x="190" y="215" width="1220" height="330" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="190" y="215" width="1220" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="800.0" y="259" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">«executionEnvironment» JVM / Java 21+</text>
+<text x="210" y="325" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">«artifact» PropieraApp · vistas Swing · AlquilerControlador</text>
+<text x="210" y="366" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">«artifact» AlquilerService · AutenticacionService</text>
+<text x="210" y="407" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">«artifact» DAO · BaseDatos · Connector/J</text>
+<text x="210" y="448" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">Interfaz, controlador y servicios: llamadas dentro de la JVM.</text>
+<rect x="190" y="775" width="1220" height="130" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="190" y="775" width="1220" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="800.0" y="819" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">«executionEnvironment» Docker / MySQL 8.4</text>
+<text x="210" y="885" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">«artifact» Tablas InnoDB · datos ficticios</text>
+<polyline points="800,545 800,775" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="790.8909147665202,758.325931324083 800,775 809.1090852334798,758.325931324083" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="830" y="630" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">JDBC / Connector-J</text>
+<text x="830" y="678" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">TCP con TLS · 127.0.0.1:33316 → 3306</text>
+<text x="800" y="1021" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="middle" fill="#173B3A">Uso interno previsto: Swing en cada equipo y MySQL en la red privada.</text>
+</svg>
