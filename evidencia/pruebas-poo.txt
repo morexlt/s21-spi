@@ -1,0 +1,10 @@
+PASS POO01 fábrica trimestral
+PASS POO02 fábrica semestral
+PASS POO03 trimestre meses 1 a 3
+PASS POO04 trimestre mes 4 pendiente
+PASS POO05 semestre meses 1 a 6
+PASS POO06 semestre mes 7 pendiente
+PASS POO07 despacho polimórfico
+PASS POO08 periodicidad inválida
+PASS POO09 índice inválido
+RESULTADO: 9 verificaciones POO aprobadas.

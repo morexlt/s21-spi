@@ -2,6 +2,7 @@ package propiera.servicio;
 
 import propiera.persistencia.BaseDatos;
 import propiera.modelo.AltaContrato;
+import propiera.modelo.PeriodicidadAjuste;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -84,10 +85,11 @@ public final class AlquilerService {
     private void generarCuotas(Connection conexion, long contrato, AltaContrato alta) throws SQLException {
         long meses = ChronoUnit.MONTHS.between(YearMonth.from(alta.inicio()),
             YearMonth.from(alta.fin())) + 1;
+        PeriodicidadAjuste periodicidad = PeriodicidadAjuste.crear(alta.ajusteMeses());
         for (int mes = 0; mes < meses; mes++) {
             LocalDate periodo = alta.inicio().plusMonths(mes);
             // Los meses posteriores al primer ajuste quedan sin importe confirmado.
-            BigDecimal importe = mes < alta.ajusteMeses() ? alta.importe() : null;
+            BigDecimal importe = periodicidad.importeInicial(mes, alta.importe());
             operaciones.insertarCuota(conexion, contrato, periodo,
                 periodo.withDayOfMonth(alta.diaVencimiento()), importe);
         }

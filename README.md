@@ -1,7 +1,7 @@
-# Propiera — aplicación de escritorio AP2
+# Propiera — aplicación de escritorio AP3
 
 Prototipo de escritorio en Java Swing y MySQL para la gestión interna de
-alquileres de Propiera. Corresponde a la actividad práctica 2.
+alquileres de Propiera. Corresponde a la actividad práctica 3.
 
 Repositorio: https://github.com/morexlt/s21-spi
 
@@ -51,6 +51,12 @@ la ventana. Los cambios visuales se realizan en el hilo de Swing.
 El contrato y sus cuotas se guardan en una misma transacción. Los bloqueos de
 propiedad y cuota evitan contratos superpuestos y sobrepagos simultáneos.
 La autorización también se verifica en el servicio antes de guardar.
+
+La generación de cuotas utiliza `PeriodicidadAjuste`. La clase abstracta define
+la operación común y `AjusteTrimestral` y `AjusteSemestral` determinan cuántos
+meses conservan el importe inicial. `AlquilerService` usa la misma operación
+sin distinguir el tipo concreto. Los tramos posteriores continúan pendientes
+de aplicación del ajuste; no se inventa un importe futuro.
 
 ## Preparación
 
@@ -114,6 +120,7 @@ Usar una base nueva con sólo los datos iniciales y las variables configuradas:
 bash compilar.sh
 java -cp 'build/classes:lib/*' propiera.Pruebas
 java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasSwing
+java -cp 'build/classes:lib/*' propiera.PruebasPoo
 ```
 
 En Windows el separador del classpath es punto y coma. En macOS se puede usar
@@ -126,6 +133,8 @@ También comprueba que actualizar los catálogos conserve los participantes
 seleccionados por identificador y que los importes y saldos se ordenen
 numéricamente. Las pruebas de rechazo comprueban el mensaje de validación
 o el código y estado SQL de la restricción esperada.
+PruebasPoo verifica los dos tipos de periodicidad y el comportamiento común
+sin necesitar conexión a MySQL.
 
 sql/03_consultas.sql contiene consultas de saldos, cobros y liquidaciones.
 sql/04_abm_seguro.sql realiza un ABM sobre un registro temporal y revierte
