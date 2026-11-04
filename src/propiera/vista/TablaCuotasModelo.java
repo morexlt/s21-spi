@@ -1,16 +1,18 @@
 package propiera.vista;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.math.BigDecimal;
 import javax.swing.table.AbstractTableModel;
 import propiera.modelo.Cuota;
 
 public class TablaCuotasModelo extends AbstractTableModel {
     private final String[] columnas = {"Cuota", "Contrato", "Propiedad", "Período", "Vencimiento", "Importe ($)", "Saldo ($)"};
-    private List<Cuota> cuotas = List.of();
+    private final ArrayList<Cuota> cuotas = new ArrayList<>();
 
     public void actualizar(List<Cuota> cuotas) {
-        this.cuotas = List.copyOf(cuotas);
+        this.cuotas.clear();
+        this.cuotas.addAll(cuotas);
         fireTableDataChanged();
     }
 

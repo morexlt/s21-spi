@@ -1,0 +1,20 @@
+PASS AJ01 permisos
+PASS AJ02 importe cero
+PASS AJ03 más de dos decimales
+PASS AJ04 cuota inexistente
+PASS AJ05 mes intermedio
+PASS AJ06 tramo inicial
+PASS AJ07 orden de tramos
+PASS AJ08 confirma tres cuotas
+PASS AJ09 consulta conserva otros tramos
+PASS AJ10 sin sobrescritura
+PASS AJ11 cuota ajustada admite pago
+PASS AJ12 mantiene importe cobrado
+PASS AJ13 tramo semestral
+PASS AJ14 último tramo incompleto
+PASS AJ15 dos ajustes simultáneos
+PASS AJ15 resultado persistido
+PASS AJ16 error SQL y rollback
+PASS AJ17 formulario selecciona y limpia
+PASS AJ18 arreglo de columnas y ArrayList de filas
+RESULTADO: 18 verificaciones AP4 aprobadas.

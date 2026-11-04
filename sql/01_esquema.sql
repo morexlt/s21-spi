@@ -1,4 +1,4 @@
--- Propiera AP2. MySQL 8.4. Ejecutar en una base NUEVA y exclusiva de pruebas.
+-- Propiera AP4. MySQL 8.4. Ejecutar en una base NUEVA y exclusiva de pruebas.
 SET NAMES utf8mb4;
 CREATE TABLE usuario (
  id BIGINT PRIMARY KEY AUTO_INCREMENT,
@@ -63,7 +63,7 @@ CREATE TABLE pago (
  FOREIGN KEY (registrado_por) REFERENCES usuario(id),
  CHECK (capital>0), CHECK (mora>=0), INDEX ix_pago_fecha(fecha)
 ) ENGINE=InnoDB;
--- Entidades diseñadas para las próximas iteraciones; sin pantallas en AP2.
+-- Entidades diseñadas para próximas iteraciones; sin pantallas en el prototipo.
 CREATE TABLE gasto (
  id BIGINT PRIMARY KEY AUTO_INCREMENT,
  contrato_id BIGINT NOT NULL, periodo DATE NOT NULL,

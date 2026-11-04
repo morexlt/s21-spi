@@ -1,7 +1,7 @@
-# Propiera — aplicación de escritorio AP3
+# Propiera — aplicación de escritorio AP4
 
 Prototipo de escritorio en Java Swing y MySQL para la gestión interna de
-alquileres de Propiera. Corresponde a la actividad práctica 3.
+alquileres de Propiera. Corresponde a la actividad práctica 4.
 
 Repositorio: https://github.com/morexlt/s21-spi
 
@@ -10,6 +10,7 @@ Repositorio: https://github.com/morexlt/s21-spi
 - Registrar contratos y generar sus cuotas mensuales.
 - Consultar cuotas, vencimientos y saldos.
 - Registrar pagos parciales o completos, con capital y mora separados.
+- Confirmar el nuevo importe mensual de un tramo de ajuste.
 - Administrativo registra y consulta. Martillero sólo consulta.
 - Validar contratos superpuestos, referencias duplicadas y pagos superiores al saldo.
 
@@ -19,15 +20,17 @@ tener varias propiedades.
 
 El contrato comienza el día 1 y termina el último día del mes, con un máximo de
 120 meses. El vencimiento se fija entre el día 1 y el 28. Se configura una
-periodicidad de ajuste trimestral o semestral; su aplicación está pendiente.
+periodicidad de ajuste trimestral o semestral. El importe de cada nuevo tramo
+se informa manualmente después de consultar la condición pactada.
 
 Se generan las cuotas de toda la vigencia. Sólo el primer tramo tiene importe
 confirmado; las siguientes quedan pendientes de ajuste y no admiten cobros.
-Los gastos, las liquidaciones, la actualización de ajustes y el cálculo
+Los gastos, las liquidaciones, el cálculo de índices de ajuste y el cálculo
 automático de mora no están implementados en esta entrega.
 
-El modelo de liquidaciones prevé incluir cada pago o gasto completo una sola
-vez. pago_id y gasto_id son las claves primarias de sus respectivos detalles.
+El modelo de liquidaciones prevé incluir cada movimiento seleccionado por su
+importe completo y como máximo una vez. Sólo se descuentan los gastos marcados
+como descontables. pago_id y gasto_id son las claves primarias de sus respectivos detalles.
 El servicio de liquidación deberá comprobar el propietario, el mes y los importes
 antes de confirmar. Los totales de cobros y gastos se agregan por separado.
 
@@ -56,7 +59,18 @@ La generación de cuotas utiliza `PeriodicidadAjuste`. La clase abstracta define
 la operación común y `AjusteTrimestral` y `AjusteSemestral` determinan cuántos
 meses conservan el importe inicial. `AlquilerService` usa la misma operación
 sin distinguir el tipo concreto. Los tramos posteriores continúan pendientes
-de aplicación del ajuste; no se inventa un importe futuro.
+de confirmación hasta que se informe el importe del tramo.
+
+Para confirmar un ajuste, se selecciona la primera cuota pendiente del tramo.
+El servicio comprueba los permisos y el orden de los tramos, bloquea el contrato
+y sus cuotas y utiliza AjusteDao para actualizar los importes. No se permite
+sobrescribir un tramo confirmado ni modificar cuotas con pagos. Si el contrato
+termina antes, sólo se actualizan los meses restantes. Toda la operación se
+confirma o revierte junta.
+
+TablaCuotasModelo usa un arreglo String[] para las siete columnas y un
+ArrayList<Cuota> para las filas que obtiene de MySQL. Las columnas tienen
+estructura fija; la cantidad de cuotas cambia con los contratos registrados.
 
 ## Preparación
 
@@ -65,7 +79,7 @@ Swing forma parte del JDK. La compilación se realiza mediante compilar.sh.
 
 Para usar una base nueva con Docker, definir PROPIERA_MYSQL_ROOT_PASSWORD
 y PROPIERA_DB_PASSWORD y ejecutar `docker compose up -d`.
-El servicio utiliza el puerto local 33316 y crea la base propiera_ap2.
+El servicio utiliza el puerto local 33316 y crea la base propiera_ap4.
 Esperar a que termine la inicialización. Si ya existe MySQL, crear una base
 vacía utf8mb4 y cargar sql/01_esquema.sql y sql/02_datos_demo.sql.
 No cargar esos archivos en una base con información real.
@@ -87,7 +101,7 @@ son `administrativo` y `martillero`. Las claves se toman del entorno y los
 perfiles se comprueban contra los usuarios activos de la base.
 
 PROPIERA_DB_URL permite cambiar la conexión. Por defecto se usa
-`jdbc:mysql://127.0.0.1:33316/propiera_ap2?sslMode=REQUIRED&connectionTimeZone=America/Argentina/Buenos_Aires`.
+`jdbc:mysql://127.0.0.1:33316/propiera_ap4?sslMode=REQUIRED&connectionTimeZone=America/Argentina/Buenos_Aires`.
 En una base remota se debe verificar la identidad del servidor con un certificado
 válido. Esta autenticación de demostración no reemplaza cuentas individuales,
 contraseñas almacenadas de forma segura ni auditoría para uso real.
@@ -98,7 +112,7 @@ El proyecto también se puede importar con pom.xml en IntelliJ IDEA o Eclipse.
 
 ## Probar la aplicación
 
-Ingresar como administrativo y revisar las tres pestañas.
+Ingresar como administrativo y revisar las cuatro pestañas.
 
 1. En Registrar contrato, elegir propiedad e inquilino, completar la vigencia,
    importe, comisión y condición de mora, y guardar.
@@ -108,6 +122,9 @@ Ingresar como administrativo y revisar las tres pestañas.
    Guardar y comprobar el saldo actualizado.
 4. Intentar cargar un contrato superpuesto o un pago mayor al saldo.
 5. Cerrar la aplicación e ingresar como martillero: sólo aparece la consulta.
+6. Seleccionar la primera cuota pendiente de un tramo y usar Confirmar ajuste
+   del tramo. Ingresar el nuevo importe mensual y confirmar. Al volver a la
+   consulta, las cuotas de ese tramo deben mostrar el nuevo importe.
 
 Las fechas se escriben AAAA-MM-DD. Los importes admiten punto o coma decimal,
 sin separadores de miles y con hasta dos decimales. La mora se informa manualmente.
@@ -121,6 +138,7 @@ bash compilar.sh
 java -cp 'build/classes:lib/*' propiera.Pruebas
 java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasSwing
 java -cp 'build/classes:lib/*' propiera.PruebasPoo
+java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasAjuste
 ```
 
 En Windows el separador del classpath es punto y coma. En macOS se puede usar
@@ -135,6 +153,10 @@ numéricamente. Las pruebas de rechazo comprueban el mensaje de validación
 o el código y estado SQL de la restricción esperada.
 PruebasPoo verifica los dos tipos de periodicidad y el comportamiento común
 sin necesitar conexión a MySQL.
+PruebasAjuste se ejecuta después de Pruebas, una sola vez por base ficticia.
+Comprueba tramos trimestrales, semestrales y finales incompletos, permisos,
+concurrencia, cobros posteriores y reversión ante un error SQL. Para simular
+ese error crea una restricción CHECK temporal y la retira al terminar.
 
 sql/03_consultas.sql contiene consultas de saldos, cobros y liquidaciones.
 sql/04_abm_seguro.sql realiza un ABM sobre un registro temporal y revierte

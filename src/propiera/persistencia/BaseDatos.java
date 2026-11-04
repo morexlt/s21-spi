@@ -13,7 +13,7 @@ import java.util.Objects;
 public final class BaseDatos {
     public Connection abrir() throws SQLException {
         String url = System.getenv().getOrDefault("PROPIERA_DB_URL",
-            "jdbc:mysql://127.0.0.1:33316/propiera_ap2?sslMode=REQUIRED&connectionTimeZone=America/Argentina/Buenos_Aires");
+            "jdbc:mysql://127.0.0.1:33316/propiera_ap4?sslMode=REQUIRED&connectionTimeZone=America/Argentina/Buenos_Aires");
         return DriverManager.getConnection(url,
             obligatorio("PROPIERA_DB_USER"), obligatorio("PROPIERA_DB_PASSWORD"));
     }

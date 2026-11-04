@@ -71,6 +71,8 @@ public class AlquilerControlador {
         ventana = new PrincipalVista(usuario);
         ventana.actualizar().addActionListener(evento -> actualizar());
         ventana.cobrar().addActionListener(evento -> seleccionarCobro());
+        ventana.confirmarAjuste().addActionListener(evento -> seleccionarAjuste());
+        ventana.ajuste().guardar().addActionListener(evento -> guardarAjuste());
         ventana.contrato().guardar().addActionListener(evento -> guardarContrato());
         ventana.pago().guardar().addActionListener(evento -> guardarPago());
         login.dispose();
@@ -98,6 +100,41 @@ public class AlquilerControlador {
         } else {
             ventana.pago().seleccionarCuota(cuota.id(), cuota.saldo().toPlainString());
             ventana.mostrarPago();
+        }
+    }
+
+    private void seleccionarAjuste() {
+        Cuota cuota = ventana.cuotaSeleccionada();
+        if (cuota == null) {
+            mensaje("Seleccioná la primera cuota pendiente del tramo en la tabla.");
+        } else if (cuota.importe() != null) {
+            mensaje("La cuota ya tiene un importe confirmado.");
+        } else {
+            ventana.ajuste().seleccionarCuota(cuota);
+            ventana.mostrarAjuste();
+        }
+    }
+
+    private void guardarAjuste() {
+        try {
+            if (ventana.ajuste().cuota().isBlank()) {
+                throw new IllegalArgumentException("Seleccioná una cuota pendiente desde la tabla.");
+            }
+            long cuota = Long.parseLong(ventana.ajuste().cuota());
+            BigDecimal importe = importe(ventana.ajuste().importe());
+            int respuesta = JOptionPane.showConfirmDialog(ventana,
+                "Se confirmará un importe mensual de $" + importe.toPlainString()
+                    + " para el tramo de ajuste. ¿Continuar?", "Confirmar ajuste", JOptionPane.YES_NO_OPTION);
+            if (respuesta != JOptionPane.YES_OPTION) {
+                return;
+            }
+            ejecutar(() -> servicio.confirmarAjuste(cuota, importe, usuario.id()), cantidad -> {
+                mensaje("Ajuste guardado. Cuotas actualizadas: " + cantidad + ".");
+                ventana.ajuste().limpiar();
+                actualizar();
+            });
+        } catch (Exception error) {
+            mostrarError(error);
         }
     }
 

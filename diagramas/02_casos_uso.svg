@@ -17,6 +17,9 @@
 <ellipse cx="590.0" cy="412.5" rx="200.0" ry="57.5" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
 <text x="590.0" y="402" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">CU-01</text>
 <text x="590.0" y="440" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">Registrar contrato</text>
+<ellipse cx="1070.0" cy="207.5" rx="200.0" ry="57.5" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1070.0" y="197" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">CU-08</text>
+<text x="1070.0" y="235" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">Confirmar ajuste</text>
 <ellipse cx="1070.0" cy="412.5" rx="200.0" ry="57.5" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
 <text x="1070.0" y="402" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">CU-07</text>
 <text x="1070.0" y="440" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="middle" fill="#173B3A">Generar cuotas</text>
@@ -39,6 +42,7 @@
 <polyline points="190,500 285,500 285,412 390,412" fill="none" stroke="#173B3A" stroke-width="3"/>
 <polyline points="190,500 285,500 285,647 390,647" fill="none" stroke="#173B3A" stroke-width="3"/>
 <polyline points="190,500 285,500 285,857 390,857" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="190,500 245,500 245,120 1070,120 1070,150" fill="none" stroke="#173B3A" stroke-width="3"/>
 <polyline points="190,500 245,500 245,1127 620,1127" fill="none" stroke="#173B3A" stroke-width="3"/>
 <polyline points="1420,850 1380,850 1380,717 1270,717" fill="none" stroke="#173B3A" stroke-width="3"/>
 <polyline points="1420,850 1380,850 1380,947 1270,947" fill="none" stroke="#173B3A" stroke-width="3"/>

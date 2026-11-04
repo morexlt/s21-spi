@@ -1,11 +1,13 @@
-2026-09-27 — Java Swing, macOS, MySQL 8.4
+2026-11-04 — Java Swing, macOS, MySQL 8.4
 
 PASS apertura de ventana de ingreso con aspecto nativo
 PASS ingreso administrativo mediante el controlador y autenticación real
 PASS carga de cuotas y catálogos desde MySQL mediante SwingWorker
-PASS tres pestañas para Administrativo: cuotas, contrato y pago
-PASS una pestaña de consulta para Martillero
-PASS revisión visual de las tres pestañas
+PASS alta de contrato mediante formulario, controlador y servicio: 12 cuotas en MySQL
+PASS registro de pago parcial de $100.000: saldo de la primera cuota $200.000
+PASS cuatro pestañas para Administrativo: cuotas, contrato, pago y ajuste
+PASS confirmación de ajuste de $360.000: tres cuotas actualizadas y siguiente tramo pendiente
+PASS seis capturas de las ventanas conectadas a la base ficticia
 
-La revisión de la interfaz incluyó el ingreso, la carga de datos y los permisos.
-Las escrituras y sus validaciones se comprobaron con las pruebas de integración.
+Base utilizada: propiera_ap4_demo_20261104. Las capturas están en evidencia/pantallas/.
+Las validaciones y el permiso de Martillero se comprobaron también con pruebas automatizadas.

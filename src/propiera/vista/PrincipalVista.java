@@ -21,8 +21,10 @@ public class PrincipalVista extends JFrame {
     private final JTable tabla = new JTable(modelo);
     private final FormularioContrato contrato = new FormularioContrato();
     private final FormularioPago pago = new FormularioPago();
+    private final FormularioAjuste ajuste = new FormularioAjuste();
     private final JButton actualizar = new JButton("Actualizar cuotas");
     private final JButton cobrar = new JButton("Cobrar cuota seleccionada");
+    private final JButton confirmarAjuste = new JButton("Confirmar ajuste del tramo");
     private final JLabel estado = new JLabel(" ");
     private final boolean puedeCargar;
 
@@ -47,6 +49,7 @@ public class PrincipalVista extends JFrame {
         acciones.add(actualizar);
         if (puedeCargar) {
             acciones.add(cobrar);
+            acciones.add(confirmarAjuste);
         }
         cuotas.add(acciones, BorderLayout.NORTH);
         cuotas.add(new JScrollPane(tabla), BorderLayout.CENTER);
@@ -55,6 +58,7 @@ public class PrincipalVista extends JFrame {
         if (puedeCargar) {
             pestanas.addTab("Registrar contrato", new JScrollPane(contrato));
             pestanas.addTab("Registrar pago", new JScrollPane(pago));
+            pestanas.addTab("Confirmar ajuste", new JScrollPane(ajuste));
         }
         add(pestanas, BorderLayout.CENTER);
         estado.setBorder(BorderFactory.createEmptyBorder(10, 20, 12, 20));
@@ -72,6 +76,15 @@ public class PrincipalVista extends JFrame {
     public FormularioContrato contrato() {
         return contrato;
     }
+    public FormularioAjuste ajuste() {
+        return ajuste;
+    }
+    public JButton confirmarAjuste() {
+        return confirmarAjuste;
+    }
+    public void mostrarAjuste() {
+        pestanas.setSelectedIndex(3);
+    }
     public FormularioPago pago() {
         return pago;
     }
@@ -88,6 +101,8 @@ public class PrincipalVista extends JFrame {
     public void ocupado(boolean ocupado) {
         actualizar.setEnabled(!ocupado);
         cobrar.setEnabled(!ocupado && puedeCargar);
+        confirmarAjuste.setEnabled(!ocupado && puedeCargar);
+        ajuste.guardar().setEnabled(!ocupado && puedeCargar);
         contrato.guardar().setEnabled(!ocupado && puedeCargar);
         pago.guardar().setEnabled(!ocupado && puedeCargar);
         estado.setText(ocupado ? "Consultando MySQL…" : "Propiera · Gestión de alquileres · Datos de prueba");

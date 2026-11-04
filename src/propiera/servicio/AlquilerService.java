@@ -17,11 +17,13 @@ import propiera.modelo.Cuota;
 import propiera.modelo.Opcion;
 import propiera.persistencia.AlquilerDao;
 import propiera.persistencia.OperacionDao;
+import propiera.persistencia.AjusteDao;
 
 public final class AlquilerService {
     private final BaseDatos baseDatos;
     private final AlquilerDao consultas;
     private final OperacionDao operaciones = new OperacionDao();
+    private final AjusteDao ajustes = new AjusteDao();
 
     public AlquilerService(BaseDatos baseDatos) {
         this.baseDatos = baseDatos;
@@ -92,6 +94,51 @@ public final class AlquilerService {
             BigDecimal importe = periodicidad.importeInicial(mes, alta.importe());
             operaciones.insertarCuota(conexion, contrato, periodo,
                 periodo.withDayOfMonth(alta.diaVencimiento()), importe);
+        }
+    }
+
+    public int confirmarAjuste(long cuota, BigDecimal importe, long usuario) throws SQLException {
+        exigir(importe != null && importe.signum() > 0 && importe.scale() <= 2
+            && importe.compareTo(new BigDecimal("9999999999.99")) <= 0, "Importe de ajuste inválido");
+        try (Connection conexion = baseDatos.abrir()) {
+            conexion.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
+            conexion.setAutoCommit(false);
+            try {
+                exigir(operaciones.administrativoActivo(conexion, usuario),
+                    "El usuario no puede confirmar ajustes");
+                Long contratoId = ajustes.contratoDeCuota(conexion, cuota);
+                exigir(contratoId != null, "Cuota inexistente");
+                AjusteDao.Contrato contrato = ajustes.bloquearContrato(conexion, contratoId);
+                exigir(contrato != null, "Contrato inexistente");
+                List<AjusteDao.CuotaAjuste> cuotas = ajustes.bloquearCuotas(conexion, contratoId);
+                AjusteDao.CuotaAjuste elegida = cuotas.stream()
+                    .filter(actual -> actual.id() == cuota).findFirst().orElseThrow(
+                        () -> new IllegalArgumentException("Cuota inexistente"));
+                long meses = ChronoUnit.MONTHS.between(contrato.inicio(), elegida.periodo());
+                exigir(meses >= contrato.meses() && meses % contrato.meses() == 0,
+                    "Seleccioná la primera cuota de un tramo de ajuste");
+                LocalDate hasta = elegida.periodo().plusMonths(contrato.meses());
+                long esperadas = Math.min(contrato.meses(),
+                    ChronoUnit.MONTHS.between(elegida.periodo(), contrato.fin().withDayOfMonth(1)) + 1);
+                int actualizadas = 0;
+                for (AjusteDao.CuotaAjuste actual : cuotas) {
+                    if (actual.periodo().isBefore(elegida.periodo())) {
+                        exigir(actual.importe() != null, "Primero confirmá el tramo anterior");
+                    } else if (actual.periodo().isBefore(hasta)) {
+                        exigir(actual.importe() == null, "El tramo ya tiene importes confirmados");
+                        exigir(!ajustes.tienePagos(conexion, actual.id()),
+                            "No se puede ajustar una cuota con pagos");
+                        ajustes.confirmarImporte(conexion, actual.id(), importe);
+                        actualizadas++;
+                    }
+                }
+                exigir(actualizadas == esperadas, "El tramo no tiene todas sus cuotas");
+                conexion.commit();
+                return actualizadas;
+            } catch (SQLException | RuntimeException error) {
+                conexion.rollback();
+                throw error;
+            }
         }
     }
 
