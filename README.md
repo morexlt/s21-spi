@@ -34,6 +34,14 @@ como descontables. pago_id y gasto_id son las claves primarias de sus respectivo
 El servicio de liquidación deberá comprobar el propietario, el mes y los importes
 antes de confirmar. Los totales de cobros y gastos se agregan por separado.
 
+## Interfaz
+
+La consulta muestra la cantidad de cuotas con saldo y pendientes de ajuste.
+Para registrar un cobro o confirmar un ajuste se selecciona una fila de la tabla.
+Los importes se presentan con punto de miles y coma decimal, y se ordenan
+numéricamente. En los formularios se ingresan sin separador de miles.
+Las ventanas permiten desplazarse por los campos cuando se reduce su tamaño.
+
 ## Organización MVC
 
 ```

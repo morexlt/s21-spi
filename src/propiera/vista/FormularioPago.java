@@ -1,17 +1,11 @@
 package propiera.vista;
 
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.time.LocalDate;
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class FormularioPago extends JPanel {
+public class FormularioPago extends FormularioBase {
     private final JTextField cuota = new JTextField();
     private final JTextField fecha = new JTextField(LocalDate.now().toString());
     private final JTextField capital = new JTextField();
@@ -20,40 +14,15 @@ public class FormularioPago extends JPanel {
     private final JTextField referencia = new JTextField();
     private final JButton guardar = new JButton("Guardar pago");
 
-    private int fila;
-
     public FormularioPago() {
-        setLayout(new GridBagLayout());
-        setBorder(BorderFactory.createEmptyBorder(24, 24, 24, 24));
+        super("Registrar pago", "Seleccioná una cuota con saldo desde Cuotas y saldos.");
         agregar("Número de cuota", cuota);
         agregar("Fecha de cobro (aaaa-mm-dd)", fecha);
         agregar("Capital cobrado ($)", capital);
         agregar("Mora cobrada ($)", mora);
         agregar("Medio de pago", medio);
         agregar("Referencia única del cobro", referencia);
-        agregar("Podés seleccionar la cuota desde la tabla.", guardar);
-        GridBagConstraints espacio = new GridBagConstraints();
-        espacio.gridy = fila;
-        espacio.weighty = 1;
-        add(new JPanel(), espacio);
-    }
-
-    private void agregar(String titulo, javax.swing.JComponent componente) {
-        GridBagConstraints etiqueta = new GridBagConstraints();
-        etiqueta.gridx = 0;
-        etiqueta.gridy = fila;
-        etiqueta.anchor = GridBagConstraints.WEST;
-        etiqueta.insets = new Insets(8, 0, 8, 24);
-        add(new JLabel(titulo), etiqueta);
-
-        GridBagConstraints campo = new GridBagConstraints();
-        campo.gridx = 1;
-        campo.gridy = fila;
-        campo.weightx = 1;
-        campo.fill = GridBagConstraints.HORIZONTAL;
-        campo.insets = new Insets(8, 0, 8, 0);
-        add(componente, campo);
-        fila++;
+        terminar("Importes sin separador de miles, con hasta dos decimales.", guardar);
     }
 
     public void seleccionarCuota(long id, String saldo) {

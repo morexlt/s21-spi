@@ -1,18 +1,12 @@
 package propiera.vista;
 
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.util.List;
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import propiera.modelo.Opcion;
 
-public class FormularioContrato extends JPanel {
+public class FormularioContrato extends FormularioBase {
     private final JComboBox<Opcion> propiedad = new JComboBox<>();
     private final JComboBox<Opcion> inquilino = new JComboBox<>();
     private final JTextField inicio = new JTextField("2026-09-01");
@@ -24,12 +18,10 @@ public class FormularioContrato extends JPanel {
     private final JTextField mora = new JTextField();
     private final JButton guardar = new JButton("Guardar contrato y generar cuotas");
 
-    private int fila;
     private boolean opcionesCargadas;
 
     public FormularioContrato() {
-        setLayout(new GridBagLayout());
-        setBorder(BorderFactory.createEmptyBorder(20, 24, 20, 24));
+        super("Registrar contrato", "Datos de las partes, vigencia y condiciones del alquiler.");
         agregar("Propiedad y propietario", propiedad);
         agregar("Inquilino", inquilino);
         agregar("Inicio (aaaa-mm-dd)", inicio);
@@ -39,29 +31,7 @@ public class FormularioContrato extends JPanel {
         agregar("Ajuste", ajuste);
         agregar("Día de vencimiento (1 a 28)", vencimiento);
         agregar("Condición de mora acordada", mora);
-        agregar("Vigencia por meses completos. Importes sin separador de miles.", guardar);
-        GridBagConstraints espacio = new GridBagConstraints();
-        espacio.gridy = fila;
-        espacio.weighty = 1;
-        add(new JPanel(), espacio);
-    }
-
-    private void agregar(String titulo, javax.swing.JComponent componente) {
-        GridBagConstraints etiqueta = new GridBagConstraints();
-        etiqueta.gridx = 0;
-        etiqueta.gridy = fila;
-        etiqueta.anchor = GridBagConstraints.WEST;
-        etiqueta.insets = new Insets(8, 0, 8, 24);
-        add(new JLabel(titulo), etiqueta);
-
-        GridBagConstraints campo = new GridBagConstraints();
-        campo.gridx = 1;
-        campo.gridy = fila;
-        campo.weightx = 1;
-        campo.fill = GridBagConstraints.HORIZONTAL;
-        campo.insets = new Insets(8, 0, 8, 0);
-        add(componente, campo);
-        fila++;
+        terminar("Vigencia por meses completos. Importes sin separador de miles.", guardar);
     }
 
     public void cargarOpciones(List<Opcion> propiedades, List<Opcion> inquilinos) {

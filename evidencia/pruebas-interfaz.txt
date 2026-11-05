@@ -1,4 +1,4 @@
-2026-11-04 — Java Swing, macOS, MySQL 8.4
+2026-11-05 — Java Swing, macOS, MySQL 8.4
 
 PASS apertura de ventana de ingreso con aspecto nativo
 PASS ingreso administrativo mediante el controlador y autenticación real
@@ -9,5 +9,21 @@ PASS cuatro pestañas para Administrativo: cuotas, contrato, pago y ajuste
 PASS confirmación de ajuste de $360.000: tres cuotas actualizadas y siguiente tramo pendiente
 PASS seis capturas de las ventanas conectadas a la base ficticia
 
-Base utilizada: propiera_ap4_demo_20261104. Las capturas están en evidencia/pantallas/.
+Base utilizada: propiera_ap4_ui_20261105_final. Las capturas están en evidencia/pantallas/.
 Las validaciones y el permiso de Martillero se comprobaron también con pruebas automatizadas.
+
+Verificaciones de presentación y navegación (2026-11-05):
+
+PASS Administrativo dispone de cuatro pestañas
+PASS Sin selección no se habilitan las acciones de la tabla
+PASS La selección ordenada corresponde al identificador del modelo
+PASS Las acciones se habilitan al seleccionar una fila
+PASS Durante la operación se deshabilitan las acciones y los tres guardados
+PASS Al terminar se recuperan los botones
+PASS Formulario 1: guardar visible al abrir
+PASS Formulario 2: guardar visible al abrir
+PASS Formulario 3: guardar visible al abrir
+PASS Formulario 1: guardar accesible en ventana mínima
+PASS Formulario 2: guardar accesible en ventana mínima
+PASS Formulario 3: guardar accesible en ventana mínima
+PASS Martillero conserva una sola pestaña de consulta

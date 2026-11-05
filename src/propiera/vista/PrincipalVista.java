@@ -3,6 +3,11 @@ package propiera.vista;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,43 +31,123 @@ public class PrincipalVista extends JFrame {
     private final JButton cobrar = new JButton("Cobrar cuota seleccionada");
     private final JButton confirmarAjuste = new JButton("Confirmar ajuste del tramo");
     private final JLabel estado = new JLabel(" ");
+    private final JLabel resumen = EstiloVista.ayuda("Sin cuotas cargadas");
     private final boolean puedeCargar;
+    private boolean ocupado;
 
     public PrincipalVista(Usuario usuario) {
         super("Propiera · Gestión de alquileres");
         puedeCargar = usuario.puedeCargar();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setMinimumSize(new Dimension(960, 600));
-        setSize(1160, 740);
+        setSize(1160, 800);
         setLocationRelativeTo(null);
 
-        JLabel titulo = new JLabel("Propiera  |  " + usuario.nombre() + "  |  " + usuario.rol());
-        titulo.setBorder(BorderFactory.createEmptyBorder(16, 20, 16, 20));
-        add(titulo, BorderLayout.NORTH);
-        tabla.setRowHeight(28);
+        getContentPane().setBackground(EstiloVista.FONDO);
+        JPanel cabecera = new JPanel(new BorderLayout(10, 4));
+        cabecera.setBackground(Color.WHITE);
+        cabecera.setBorder(BorderFactory.createEmptyBorder(18, 24, 18, 24));
+        cabecera.add(EstiloVista.titulo("Propiera"), BorderLayout.WEST);
+        cabecera.add(EstiloVista.ayuda("Gestión de alquileres"), BorderLayout.CENTER);
+        String rol = puedeCargar ? "Administrativo" : "Martillero";
+        cabecera.add(EstiloVista.ayuda(usuario.nombre() + "  ·  " + rol), BorderLayout.EAST);
+        add(cabecera, BorderLayout.NORTH);
+        tabla.setFont(tabla.getFont().deriveFont(Font.PLAIN, 14f));
+        tabla.setRowHeight(34);
+        tabla.setShowGrid(false);
+        tabla.setIntercellSpacing(new Dimension(0, 0));
+        tabla.setFillsViewportHeight(true);
+        tabla.setBackground(Color.WHITE);
+        tabla.setSelectionBackground(new Color(215, 238, 233));
+        tabla.setSelectionForeground(EstiloVista.TEXTO);
+        tabla.getTableHeader().setFont(tabla.getFont().deriveFont(Font.BOLD, 13f));
+        tabla.getTableHeader().setPreferredSize(new Dimension(0, 38));
+        tabla.getTableHeader().setReorderingAllowed(false);
         tabla.setAutoCreateRowSorter(true);
+        tabla.setDefaultRenderer(String.class, new CeldaRenderizador());
+        tabla.setDefaultRenderer(Long.class, new CeldaRenderizador());
         tabla.setDefaultRenderer(java.math.BigDecimal.class, new ImporteRenderizador());
+        int[] anchos = {65, 85, 150, 150, 150, 205, 175};
+        for (int columna = 0; columna < anchos.length; columna++) {
+            tabla.getColumnModel().getColumn(columna).setPreferredWidth(anchos[columna]);
+        }
         tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        tabla.getSelectionModel().addListSelectionListener(evento -> actualizarAcciones());
+        modelo.addTableModelListener(evento -> actualizarResumen());
         JPanel cuotas = new JPanel(new BorderLayout(10, 10));
-        cuotas.setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16));
-        JPanel acciones = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        cuotas.setBackground(EstiloVista.FONDO);
+        cuotas.setBorder(BorderFactory.createEmptyBorder(22, 24, 16, 24));
+        JPanel encabezado = new JPanel(new BorderLayout(8, 14));
+        encabezado.setOpaque(false);
+        encabezado.add(EstiloVista.titulo("Cuotas y saldos"), BorderLayout.NORTH);
+        encabezado.add(resumen, BorderLayout.CENTER);
+        JPanel acciones = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        acciones.setOpaque(false);
         acciones.add(actualizar);
         if (puedeCargar) {
+            EstiloVista.botonPrincipal(cobrar);
+            acciones.add(javax.swing.Box.createHorizontalStrut(12));
             acciones.add(cobrar);
+            acciones.add(javax.swing.Box.createHorizontalStrut(12));
             acciones.add(confirmarAjuste);
         }
-        cuotas.add(acciones, BorderLayout.NORTH);
-        cuotas.add(new JScrollPane(tabla), BorderLayout.CENTER);
-        cuotas.add(new JLabel("Sin importe: pendiente de ajuste. Saldo cero: capital cancelado."), BorderLayout.SOUTH);
+        encabezado.add(acciones, BorderLayout.SOUTH);
+        cuotas.add(encabezado, BorderLayout.NORTH);
+        JScrollPane listado = new JScrollPane(tabla);
+        listado.setBorder(BorderFactory.createLineBorder(EstiloVista.BORDE));
+        cuotas.add(listado, BorderLayout.CENTER);
+        cuotas.add(EstiloVista.ayuda("Seleccioná una fila para operar. Saldo cero: capital cancelado."), BorderLayout.SOUTH);
         pestanas.addTab("Cuotas y saldos", cuotas);
         if (puedeCargar) {
-            pestanas.addTab("Registrar contrato", new JScrollPane(contrato));
-            pestanas.addTab("Registrar pago", new JScrollPane(pago));
-            pestanas.addTab("Confirmar ajuste", new JScrollPane(ajuste));
+            pestanas.addTab("Registrar contrato", contenerFormulario(contrato));
+            pestanas.addTab("Registrar pago", contenerFormulario(pago));
+            pestanas.addTab("Confirmar ajuste", contenerFormulario(ajuste));
         }
         add(pestanas, BorderLayout.CENTER);
         estado.setBorder(BorderFactory.createEmptyBorder(10, 20, 12, 20));
         add(estado, BorderLayout.SOUTH);
+        estado.setForeground(EstiloVista.SECUNDARIO);
+        ocupado(false);
+    }
+
+    private JScrollPane contenerFormulario(JPanel formulario) {
+        JPanel fondo = new JPanel(new GridBagLayout());
+        fondo.setBackground(EstiloVista.FONDO);
+        GridBagConstraints posicion = new GridBagConstraints();
+        posicion.gridx = 0;
+        posicion.gridy = 0;
+        posicion.anchor = GridBagConstraints.NORTH;
+        posicion.insets = new Insets(24, 24, 24, 24);
+        fondo.add(formulario, posicion);
+        posicion.gridy = 1;
+        posicion.weighty = 1;
+        fondo.add(javax.swing.Box.createVerticalGlue(), posicion);
+        JScrollPane contenedor = new JScrollPane(fondo);
+        contenedor.setBorder(BorderFactory.createEmptyBorder());
+        contenedor.getVerticalScrollBar().setUnitIncrement(20);
+        return contenedor;
+    }
+
+    private void actualizarResumen() {
+        int conSaldo = 0;
+        int pendientes = 0;
+        for (int fila = 0; fila < modelo.getRowCount(); fila++) {
+            Cuota cuota = modelo.cuota(fila);
+            if (cuota.importe() == null) {
+                pendientes++;
+            } else if (cuota.permiteCobro()) {
+                conSaldo++;
+            }
+        }
+        resumen.setText(modelo.getRowCount() + " cuotas  ·  " + conSaldo
+            + " con saldo  ·  " + pendientes + " pendientes de ajuste");
+        actualizarAcciones();
+    }
+
+    private void actualizarAcciones() {
+        boolean seleccionada = tabla.getSelectedRow() >= 0;
+        cobrar.setEnabled(!ocupado && puedeCargar && seleccionada);
+        confirmarAjuste.setEnabled(!ocupado && puedeCargar && seleccionada);
     }
 
     public Cuota cuotaSeleccionada() {
@@ -99,12 +184,12 @@ public class PrincipalVista extends JFrame {
     }
 
     public void ocupado(boolean ocupado) {
+        this.ocupado = ocupado;
         actualizar.setEnabled(!ocupado);
-        cobrar.setEnabled(!ocupado && puedeCargar);
-        confirmarAjuste.setEnabled(!ocupado && puedeCargar);
+        actualizarAcciones();
         ajuste.guardar().setEnabled(!ocupado && puedeCargar);
         contrato.guardar().setEnabled(!ocupado && puedeCargar);
         pago.guardar().setEnabled(!ocupado && puedeCargar);
-        estado.setText(ocupado ? "Consultando MySQL…" : "Propiera · Gestión de alquileres · Datos de prueba");
+        estado.setText(ocupado ? "Cargando datos…" : "Propiera · Gestión de alquileres · Datos de prueba");
     }
 }

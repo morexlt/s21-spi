@@ -174,8 +174,10 @@ public class PruebasSwing {
                 vistaTabla.getCellRenderer(0, 5), 0, 5)).getText();
             comprobar("SW14 tabla numérica, ordenable y no editable", ordenCorrecto
                 && tabla.getColumnClass(5) == BigDecimal.class && tabla.getColumnClass(6) == BigDecimal.class
-                && textoImporte.equals("1000.00") && !tabla.isCellEditable(0, 5));
-            comprobar("SW15 cuota pagada no cobrable", !primera.permiteCobro());
+                && textoImporte.equals("1.000,00") && !tabla.isCellEditable(0, 5));
+            Cuota pagada = new Cuota(4, 2, "P-02", LocalDate.now(), LocalDate.now(),
+                new BigDecimal("900.00"), new BigDecimal("0.00"));
+            comprobar("SW15 cuota pagada no cobrable", !pagada.permiteCobro());
         });
         System.out.println("RESULTADO: " + total + " verificaciones Swing y permisos aprobadas.");
     }
