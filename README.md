@@ -37,6 +37,8 @@ antes de confirmar. Los totales de cobros y gastos se agregan por separado.
 ## Interfaz
 
 La consulta muestra la cantidad de cuotas con saldo y pendientes de ajuste.
+El selector Propiedad permite consultar un inmueble o todas las propiedades.
+El resumen corresponde a las filas visibles y el filtro se conserva al actualizar.
 Para registrar un cobro o confirmar un ajuste se selecciona una fila de la tabla.
 Los importes se presentan con punto de miles y coma decimal, y se ordenan
 numéricamente. En los formularios se ingresan sin separador de miles.
@@ -91,6 +93,12 @@ El servicio utiliza el puerto local 33316 y crea la base propiera_ap4.
 Esperar a que termine la inicialización. Si ya existe MySQL, crear una base
 vacía utf8mb4 y cargar sql/01_esquema.sql y sql/02_datos_demo.sql.
 No cargar esos archivos en una base con información real.
+
+Para recorrer la interfaz con movimientos ya cargados, ejecutar después
+sql/05_escenario_presentacion.sql, únicamente si la base todavía no tiene contratos.
+Incluye tres propiedades ficticias de Neuquén (Roca 425, Mitre 680 y San Martín 1240),
+36 cuotas, un pago parcial, un pago completo y un tramo de ajuste confirmado.
+Las pruebas automáticas de negocio utilizan sólo 01 y 02, sin este escenario.
 
 ## Ejecutar
 
@@ -147,6 +155,7 @@ java -cp 'build/classes:lib/*' propiera.Pruebas
 java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasSwing
 java -cp 'build/classes:lib/*' propiera.PruebasPoo
 java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasAjuste
+java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasFiltro
 ```
 
 En Windows el separador del classpath es punto y coma. En macOS se puede usar
@@ -165,6 +174,8 @@ PruebasAjuste se ejecuta después de Pruebas, una sola vez por base ficticia.
 Comprueba tramos trimestrales, semestrales y finales incompletos, permisos,
 concurrencia, cobros posteriores y reversión ante un error SQL. Para simular
 ese error crea una restricción CHECK temporal y la retira al terminar.
+PruebasFiltro no requiere MySQL. Comprueba coincidencias exactas, orden numérico,
+recarga, conservación del filtro y actualización de una consulta vacía.
 
 sql/03_consultas.sql contiene consultas de saldos, cobros y liquidaciones.
 sql/04_abm_seguro.sql realiza un ABM sobre un registro temporal y revierte

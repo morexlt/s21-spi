@@ -1,0 +1,11 @@
+PASS FI01 consulta vacía
+PASS FI02 todas las cuotas y opciones sin duplicados
+PASS FI03 coincidencia exacta de propiedad
+PASS FI04 conserva las cuotas pendientes de ajuste
+PASS FI05 orden numérico dentro del filtro
+PASS FI06 cambia de propiedad sin operar sobre una fila oculta
+PASS FI07 conserva el filtro al actualizar
+PASS FI08 vuelve a mostrar todas
+PASS FI09 propiedad retirada vuelve a todas
+PASS FI10 recarga vacía
+RESULTADO: 10 verificaciones de filtro aprobadas.

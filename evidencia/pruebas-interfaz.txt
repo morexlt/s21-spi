@@ -9,7 +9,7 @@ PASS cuatro pestañas para Administrativo: cuotas, contrato, pago y ajuste
 PASS confirmación de ajuste de $360.000: tres cuotas actualizadas y siguiente tramo pendiente
 PASS seis capturas de las ventanas conectadas a la base ficticia
 
-Base utilizada: propiera_ap4_ui_20261105_final. Las capturas están en evidencia/pantallas/.
+Base utilizada: propiera_ap4_filtro_capturas_final_20261105. Las capturas están en evidencia/pantallas/.
 Las validaciones y el permiso de Martillero se comprobaron también con pruebas automatizadas.
 
 Verificaciones de presentación y navegación (2026-11-05):
@@ -27,3 +27,13 @@ PASS Formulario 1: guardar accesible en ventana mínima
 PASS Formulario 2: guardar accesible en ventana mínima
 PASS Formulario 3: guardar accesible en ventana mínima
 PASS Martillero conserva una sola pestaña de consulta
+
+Filtro sobre la base propiera_ap4_presentacion_20261105:
+
+PASS Administrativo: filtro P-002, 12 de 36 cuotas, cinco con saldo y seis pendientes de ajuste
+GUI Martillero: 36 cuotas, filtro P-002, resumen y actualización conservando la selección: aprobados.
+PASS resumen actualizado también al consultar todas las propiedades tras alta y ajuste
+PASS 36 cuotas de tres contratos; Roca 425, Mitre 680 dpto. 2B y San Martín 1240
+PASS script 05 cargado una vez en base nueva; bases anteriores conservadas
+
+Capturas adicionales: 07_filtro_propiedad.png y 08_consulta_general.png.

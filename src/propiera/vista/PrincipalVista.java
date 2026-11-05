@@ -17,6 +17,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
+import javax.swing.table.TableRowSorter;
 import propiera.modelo.Cuota;
 import propiera.modelo.Usuario;
 
@@ -24,6 +26,8 @@ public class PrincipalVista extends JFrame {
     private final JTabbedPane pestanas = new JTabbedPane();
     private final TablaCuotasModelo modelo = new TablaCuotasModelo();
     private final JTable tabla = new JTable(modelo);
+    private final TableRowSorter<TablaCuotasModelo> ordenador = new TableRowSorter<>(modelo);
+    private final FiltroPropiedades filtro = new FiltroPropiedades(modelo, ordenador);
     private final FormularioContrato contrato = new FormularioContrato();
     private final FormularioPago pago = new FormularioPago();
     private final FormularioAjuste ajuste = new FormularioAjuste();
@@ -63,17 +67,18 @@ public class PrincipalVista extends JFrame {
         tabla.getTableHeader().setFont(tabla.getFont().deriveFont(Font.BOLD, 13f));
         tabla.getTableHeader().setPreferredSize(new Dimension(0, 38));
         tabla.getTableHeader().setReorderingAllowed(false);
-        tabla.setAutoCreateRowSorter(true);
+        tabla.setRowSorter(ordenador);
+        ordenador.addRowSorterListener(evento -> actualizarResumen());
         tabla.setDefaultRenderer(String.class, new CeldaRenderizador());
         tabla.setDefaultRenderer(Long.class, new CeldaRenderizador());
         tabla.setDefaultRenderer(java.math.BigDecimal.class, new ImporteRenderizador());
-        int[] anchos = {65, 85, 150, 150, 150, 205, 175};
+        int[] anchos = {55, 65, 290, 120, 120, 190, 145};
         for (int columna = 0; columna < anchos.length; columna++) {
             tabla.getColumnModel().getColumn(columna).setPreferredWidth(anchos[columna]);
         }
         tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tabla.getSelectionModel().addListSelectionListener(evento -> actualizarAcciones());
-        modelo.addTableModelListener(evento -> actualizarResumen());
+        modelo.addTableModelListener(evento -> SwingUtilities.invokeLater(this::actualizarResumen));
         JPanel cuotas = new JPanel(new BorderLayout(10, 10));
         cuotas.setBackground(EstiloVista.FONDO);
         cuotas.setBorder(BorderFactory.createEmptyBorder(22, 24, 16, 24));
@@ -91,7 +96,11 @@ public class PrincipalVista extends JFrame {
             acciones.add(javax.swing.Box.createHorizontalStrut(12));
             acciones.add(confirmarAjuste);
         }
-        encabezado.add(acciones, BorderLayout.SOUTH);
+        JPanel herramientas = new JPanel(new BorderLayout(0, 10));
+        herramientas.setOpaque(false);
+        herramientas.add(filtro, BorderLayout.NORTH);
+        herramientas.add(acciones, BorderLayout.SOUTH);
+        encabezado.add(herramientas, BorderLayout.SOUTH);
         cuotas.add(encabezado, BorderLayout.NORTH);
         JScrollPane listado = new JScrollPane(tabla);
         listado.setBorder(BorderFactory.createLineBorder(EstiloVista.BORDE));
@@ -131,15 +140,15 @@ public class PrincipalVista extends JFrame {
     private void actualizarResumen() {
         int conSaldo = 0;
         int pendientes = 0;
-        for (int fila = 0; fila < modelo.getRowCount(); fila++) {
-            Cuota cuota = modelo.cuota(fila);
+        for (int fila = 0; fila < tabla.getRowCount(); fila++) {
+            Cuota cuota = modelo.cuota(tabla.convertRowIndexToModel(fila));
             if (cuota.importe() == null) {
                 pendientes++;
             } else if (cuota.permiteCobro()) {
                 conSaldo++;
             }
         }
-        resumen.setText(modelo.getRowCount() + " cuotas  ·  " + conSaldo
+        resumen.setText(tabla.getRowCount() + " de " + modelo.getRowCount() + " cuotas  ·  " + conSaldo
             + " con saldo  ·  " + pendientes + " pendientes de ajuste");
         actualizarAcciones();
     }

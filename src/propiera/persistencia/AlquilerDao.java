@@ -43,12 +43,12 @@ public class AlquilerDao {
 
     public List<Cuota> cuotas() throws SQLException {
         String sql = """
-            SELECT q.id, co.id, p.codigo, q.periodo, q.vencimiento, q.importe,
+            SELECT q.id, co.id, CONCAT(p.codigo, ' · ', p.direccion), q.periodo, q.vencimiento, q.importe,
                    q.importe - COALESCE(SUM(pa.capital), 0) AS saldo
             FROM cuota q JOIN contrato co ON co.id = q.contrato_id
             JOIN propiedad p ON p.id = co.propiedad_id
             LEFT JOIN pago pa ON pa.cuota_id = q.id
-            GROUP BY q.id, co.id, p.codigo, q.periodo, q.vencimiento, q.importe
+            GROUP BY q.id, co.id, p.codigo, p.direccion, q.periodo, q.vencimiento, q.importe
             ORDER BY q.periodo, q.id
             """;
         List<Cuota> cuotas = new ArrayList<>();
