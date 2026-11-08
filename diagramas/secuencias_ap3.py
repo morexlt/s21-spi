@@ -64,7 +64,7 @@ secuencia('05_secuencia.png', ['formulario:\nFormularioContrato', 'controlador:\
     (0, 1, 'retorno: datos'),
     (1, 1, 'new AltaContrato(...)'),
     (1, 2, 'registrarContrato(alta, usuario)'),
-    (2, 1, 'retorno: id del contrato (detalle en figura 7)'),
+    (2, 1, 'retorno: id del contrato (detalle en figura 8)'),
     (1, 3, 'showMessageDialog(ventana, mensaje, ...)'),
     (1, 1, 'actualizar()'),
     (1, 2, 'consultarCuotas(), propiedades(), inquilinos()'),
@@ -82,7 +82,7 @@ secuencia('07_secuencia_transaccion.png', ['servicio:\nAlquilerService', 'baseDa
     (0, 4, 'administrativoActivo(...), inquilinoActivo(...)'),
     (0, 4, 'bloquearPropiedad(...), contratoSuperpuesto(...)'),
     (0, 4, 'insertarContrato(...)'),
-    (0, 0, 'generarCuotas(...) — detalle en figura 8'),
+    (0, 0, 'generarCuotas(...) — detalle en figura 9'),
     (0, 3, 'commit()'),
     (0, 3, 'close() al salir del try'),
 ], 'Flujo exitoso. Si falla una validación o escritura dentro de la transacción: rollback() y propagación del error.\nOperacionDao usa BaseDatos para ejecutar las sentencias JDBC. MySQL es el motor de persistencia.')

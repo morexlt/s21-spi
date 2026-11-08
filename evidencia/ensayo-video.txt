@@ -1,0 +1,6 @@
+2026-11-08
+Base aislada: propiera_ap4_ensayo_video_20261108
+PASS ensayo de video: P-001, 12 cuotas; julio-septiembre 420000.00, octubre pendiente.
+PASS conserva cobro parcial de enero (saldo 200000.00) e importe anterior de abril (360000.00).
+
+La base de grabación propiera_ap4_video_20261108 conserva su estado inicial.

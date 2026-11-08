@@ -1,5 +1,5 @@
-MySQL: VERSION()
-8.4.11
+2026-11-08
+Base aislada: propiera_ap4_revision_final_20261108
 
 03_consultas.sql
 id	periodo	vencimiento	importe	saldo	estado

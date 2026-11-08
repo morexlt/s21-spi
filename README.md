@@ -137,10 +137,12 @@ Ingresar como administrativo y revisar las cuatro pestañas.
 3. En Registrar pago, completar fecha, capital, mora y una referencia única.
    Guardar y comprobar el saldo actualizado.
 4. Intentar cargar un contrato superpuesto o un pago mayor al saldo.
-5. Cerrar la aplicación e ingresar como martillero: sólo aparece la consulta.
-6. Seleccionar la primera cuota pendiente de un tramo y usar Confirmar ajuste
+5. Seleccionar la primera cuota pendiente de un tramo y usar Confirmar ajuste
    del tramo. Ingresar el nuevo importe mensual y confirmar. Al volver a la
    consulta, las cuotas de ese tramo deben mostrar el nuevo importe.
+6. Cerrar la aplicación e ingresar como martillero: sólo aparece la consulta.
+7. Elegir una propiedad y volver a Todas las propiedades. El resumen debe
+   corresponder a las filas visibles y la selección se conserva al actualizar.
 
 Las fechas se escriben AAAA-MM-DD. Los importes admiten punto o coma decimal,
 sin separadores de miles y con hasta dos decimales. La mora se informa manualmente.
@@ -180,6 +182,9 @@ recarga, conservación del filtro y actualización de una consulta vacía.
 sql/03_consultas.sql contiene consultas de saldos, cobros y liquidaciones.
 sql/04_abm_seguro.sql realiza un ABM sobre un registro temporal y revierte
 la transacción. evidencia/ conserva los resultados de las pruebas.
+sql/06_verificacion_persistencia.sql consulta las cuotas y los cobros del
+escenario de presentación. Su resultado está en evidencia/consulta-presentacion.txt
+y la captura correspondiente en evidencia/pantallas/09_consulta_mysql.png.
 
 ## Archivos
 

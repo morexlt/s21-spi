@@ -1,3 +1,6 @@
+2026-11-08
+Base aislada: propiera_ap4_revision_final_20261108
+
 PASS POO01 fábrica trimestral
 PASS POO02 fábrica semestral
 PASS POO03 trimestre meses 1 a 3

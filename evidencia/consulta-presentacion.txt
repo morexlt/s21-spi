@@ -1,0 +1,20 @@
+MySQL 8.4.11  |  11 tablas  |  3 contratos  |  36 cuotas
+
+SELECT p.codigo, q.periodo, q.importe,
+       COALESCE(SUM(pa.capital), 0) AS cobrado,
+       q.importe - COALESCE(SUM(pa.capital), 0) AS saldo
+FROM cuota q JOIN contrato c ON c.id = q.contrato_id
+JOIN propiedad p ON p.id = c.propiedad_id
+LEFT JOIN pago pa ON pa.cuota_id = q.id
+WHERE c.id = 1 AND q.periodo <= '2026-07-01'
+GROUP BY q.id, p.codigo, q.periodo, q.importe
+ORDER BY q.periodo;
+
+codigo	periodo	importe	cobrado	saldo
+P-001	2026-01-01	300000.00	100000.00	200000.00
+P-001	2026-02-01	300000.00	0.00	300000.00
+P-001	2026-03-01	300000.00	0.00	300000.00
+P-001	2026-04-01	360000.00	0.00	360000.00
+P-001	2026-05-01	360000.00	0.00	360000.00
+P-001	2026-06-01	360000.00	0.00	360000.00
+P-001	2026-07-01	NULL	0.00	NULL

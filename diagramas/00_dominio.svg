@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1120" viewBox="0 0 1500 1120">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="40" y="70" width="340" height="180" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="40" y="70" width="340" height="58" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="210" y="111" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#173B3A">Propietario</text>
+<text x="60" y="171" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">nombre</text>
+<text x="60" y="207" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">contacto</text>
+<rect x="580" y="70" width="340" height="180" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="580" y="70" width="340" height="58" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="750" y="111" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#173B3A">Propiedad</text>
+<text x="600" y="171" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">código</text>
+<text x="600" y="207" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">dirección</text>
+<rect x="1120" y="70" width="340" height="180" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="1120" y="70" width="340" height="58" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1290" y="111" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#173B3A">Inquilino</text>
+<text x="1140" y="171" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">nombre</text>
+<text x="1140" y="207" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">contacto</text>
+<rect x="580" y="440" width="340" height="180" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="580" y="440" width="340" height="58" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="750" y="481" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#173B3A">Contrato</text>
+<text x="600" y="541" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">vigencia e importe</text>
+<text x="600" y="577" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">comisión y ajuste</text>
+<rect x="40" y="440" width="340" height="180" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="40" y="440" width="340" height="58" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="210" y="481" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#173B3A">Liquidación</text>
+<text x="60" y="541" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">período</text>
+<text x="60" y="577" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">ingresos, gastos y neto</text>
+<rect x="1120" y="440" width="340" height="180" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="1120" y="440" width="340" height="58" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1290" y="481" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#173B3A">Gasto</text>
+<text x="1140" y="541" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">fecha y concepto</text>
+<text x="1140" y="577" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">importe y descontable</text>
+<rect x="580" y="810" width="340" height="180" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="580" y="810" width="340" height="58" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="750" y="851" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#173B3A">Cuota</text>
+<text x="600" y="911" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">período y vencimiento</text>
+<text x="600" y="947" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">importe y saldo</text>
+<rect x="1120" y="810" width="340" height="180" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="1120" y="810" width="340" height="58" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1290" y="851" font-family="Arial,sans-serif" font-size="29" font-weight="700" text-anchor="middle" fill="#173B3A">Pago</text>
+<text x="1140" y="911" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">fecha, capital y mora</text>
+<text x="1140" y="947" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">medio y referencia</text>
+<polyline points="380,155 580,155" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="438.9375" y="112" width="82.125" height="36" fill="white"/>
+<text x="480" y="140" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">posee</text>
+<text x="395" y="188" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="505" y="188" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="750,250 750,440" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="635.28125" y="324" width="229.4375" height="36" fill="white"/>
+<text x="750" y="352" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">se alquila mediante</text>
+<text x="770" y="291" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="770" y="426" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="1290,250 1290,340 950,340 950,530 920,530" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="1051.453125" y="295" width="107.09375" height="36" fill="white"/>
+<text x="1105" y="323" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">suscribe</text>
+<text x="1310" y="290" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="963" y="510" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="210,250 210,440" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="168.953125" y="324" width="82.09375" height="36" fill="white"/>
+<text x="210" y="352" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">recibe</text>
+<text x="230" y="291" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="230" y="426" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="920,565 1120,565" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="971.3125" y="574" width="97.375" height="36" fill="white"/>
+<text x="1020" y="602" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">registra</text>
+<text x="937" y="554" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="1042" y="554" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<polyline points="750,620 750,810" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="704.0703125" y="698" width="91.859375" height="36" fill="white"/>
+<text x="750" y="726" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">genera</text>
+<text x="770" y="661" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="770" y="794" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">1..*</text>
+<polyline points="920,900 1120,900" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="978.953125" y="856" width="82.09375" height="36" fill="white"/>
+<text x="1020" y="884" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#173B3A">recibe</text>
+<text x="937" y="937" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">1</text>
+<text x="1042" y="937" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<text x="750" y="1062" font-family="Arial,sans-serif" font-size="27" font-weight="400" text-anchor="middle" fill="#173B3A">Cada liquidación reúne los cobros y gastos seleccionados del propietario.</text>
+<text x="750" y="1099" font-family="Arial,sans-serif" font-size="24" font-weight="400" text-anchor="middle" fill="#173B3A">Gastos y liquidaciones forman parte del sistema previsto; su implementación está pendiente.</text>
+</svg>

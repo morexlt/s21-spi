@@ -1,0 +1,18 @@
+Revisión final del prototipo AP4
+8 de noviembre de 2026
+
+Se compiló y ejecutó la copia extraída del paquete de código en una base ficticia nueva: propiera_ap4_revision_final_20261108.
+
+24/24 pruebas Java/MySQL aprobadas.
+15/15 verificaciones Swing y permisos aprobadas.
+9/9 verificaciones POO aprobadas.
+18/18 grupos de ajustes AP4 aprobados; AJ15 comprueba también el resultado persistido.
+10/10 verificaciones de filtro aprobadas.
+
+Se ejecutaron los scripts 03_consultas.sql y 04_abm_seguro.sql. El ejemplo de consolidación produjo 450000.00 de capital, 1500.00 de mora y 22500.00 de comisión.
+
+La consulta 06_verificacion_persistencia.sql se ejecutó por JDBC sobre el escenario de presentación y su resultado se conserva en consulta-presentacion.txt y pantallas/09_consulta_mysql.png.
+
+El ensayo de la presentación confirmó desde Swing el ajuste de julio a septiembre por 420000.00. Conservó octubre pendiente, el saldo de enero en 200000.00 y abril en 360000.00. Se usó una base independiente; la base de grabación conserva su estado inicial.
+
+No se evaluaron rendimiento, restauración ni aceptación por parte de Propiera. Gastos, liquidaciones e índices automáticos siguen pendientes.

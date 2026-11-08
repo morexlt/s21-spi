@@ -1,3 +1,6 @@
+2026-11-08
+Base aislada: propiera_ap4_revision_final_20261108
+
 PASS AJ01 permisos
 PASS AJ02 importe cero
 PASS AJ03 más de dos decimales
