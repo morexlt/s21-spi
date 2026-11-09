@@ -1,0 +1,6 @@
+propiera_cierre_circuito_20261108_224054
+GUI: ingreso, alta de contrato, pago y ajuste ejecutados con MySQL; 6 capturas generadas.
+propiera_cierre_filtro_20261108_224054
+GUI Administrativo: 36 cuotas, filtro P-002, resumen y actualización conservando la selección: aprobados.
+propiera_cierre_abm_20261108_224054
+PASS GUI ABM: altas de propietario/propiedad/inquilino, modificación, baja y reactivación; contrato y 12 cuotas desde los registros nuevos; historial conservado; botones en tamaño mínimo.

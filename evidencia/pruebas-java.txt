@@ -1,6 +1,5 @@
 2026-11-08
-Base aislada: propiera_ap4_env_pruebas_20261108
-
+Base: propiera_revision_20261108_222727_negocio
 PASS CP01 alta válida
 PASS CP02 include genera 12 cuotas
 PASS CP03 primer tramo conocido y siguiente sin importe

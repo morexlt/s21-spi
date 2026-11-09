@@ -38,7 +38,12 @@ public class CatalogoControlador {
         });
         vista.propiedades().baja().addActionListener(evento -> {
             long id = vista.propiedades().idSeleccionado();
-            if (confirmarBaja()) ejecutar(() -> { servicio.bajaPropiedad(id, usuario); return id; });
+            if (confirmarBaja()) {
+                ejecutar(() -> {
+                    servicio.bajaPropiedad(id, usuario);
+                    return id;
+                });
+            }
         });
     }
 
@@ -49,7 +54,12 @@ public class CatalogoControlador {
         });
         panel.baja().addActionListener(evento -> {
             long id = panel.idSeleccionado();
-            if (confirmarBaja()) ejecutar(() -> { servicio.bajaPersona(tipo, id, usuario); return id; });
+            if (confirmarBaja()) {
+                ejecutar(() -> {
+                    servicio.bajaPersona(tipo, id, usuario);
+                    return id;
+                });
+            }
         });
     }
 

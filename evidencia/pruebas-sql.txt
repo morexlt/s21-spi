@@ -1,5 +1,4 @@
-Base aislada: propiera_ap4_env_pruebas_20261108
-03_consultas.sql
+2026-11-08
 id	periodo	vencimiento	importe	saldo	estado
 49	2020-01-01	2020-01-10	300000.00	300000.00	VENCIDA
 50	2020-02-01	2020-02-10	300000.00	300000.00	VENCIDA
@@ -120,7 +119,6 @@ id	periodo	vencimiento	importe	saldo	estado
 propietario_id	nombre	capital	mora	comision
 1	Ana Muñoz	450000.00	1500.00	22500.00
 
-04_abm_seguro.sql
 id	documento	nombre	contacto
 6	DEMO-ABM-TEMP	Propietario temporal	demo@example.invalid
 restantes

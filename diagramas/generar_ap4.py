@@ -50,8 +50,8 @@ class Diagrama:
         (OUT/(self.nombre+'.svg')).write_text('\n'.join(self.svg+['</svg>']),encoding='utf-8')
 
 def generar():
-    d=Diagrama('02_casos_uso',1600,1260)
-    d.rect((320,30,1340,1220),'#F7FBFA')
+    d=Diagrama('02_casos_uso',1600,1490)
+    d.rect((320,30,1340,1460),'#F7FBFA')
     d.texto(830,50,'Sistema Propiera',36,True,True)
     def actor(x,y,n):
         d.rect((x-24,y-82,x+24,y-34),ellipse=True)
@@ -78,6 +78,10 @@ def generar():
     d.linea([(1420,850),(1400,850),(1400,1127),(1050,1127)])
     d.linea([(790,412),(870,412)],dash=True,arrow=True)
     d.texto(835,290,'«include»',27,center=True)
+    d.rect((620,1300,1050,1415),FILL,True)
+    d.texto(835,1318,'CU-09\nExportar cuotas',29,center=True)
+    d.linea([(245,1127),(245,1357),(620,1357)])
+    d.linea([(1400,1127),(1400,1357),(1050,1357)])
     d.guardar()
 
     d=Diagrama('04_diseno',1600,1300)

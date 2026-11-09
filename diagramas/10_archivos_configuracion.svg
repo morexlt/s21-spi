@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1320" viewBox="0 0 1600 1320"><rect width="100%" height="100%" fill="white"/>
+<rect x="40" y="30" width="700" height="210" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="40" y="30" width="700" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="390.0" y="74" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">AlquilerControlador</text>
+<text x="60" y="139" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- servicio: AlquilerService</text>
+<text x="60" y="179" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- exportarCuotas(): void</text>
+<rect x="860" y="30" width="700" height="210" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="860" y="30" width="700" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1210.0" y="74" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">ArchivoCuotas</text>
+<text x="880" y="136" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">+ guardar(destino, contrato, reemplazar): void</text>
+<text x="880" y="173" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">- escribir(salida, contrato): void</text>
+<polyline points="740,130 860,130" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="843.325931324083,139.10908523347985 860,130 843.325931324083,120.89091476652014" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="40" y="360" width="700" height="210" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="40" y="360" width="700" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="390.0" y="404" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">AlquilerService</text>
+<text x="60" y="468" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">+ consultarContrato(contrato, usuario):</text>
+<text x="60" y="507" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">    EstadoContrato</text>
+<rect x="860" y="360" width="700" height="210" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="860" y="360" width="700" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1210.0" y="404" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">EstadoContrato «record»</text>
+<text x="880" y="466" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">id, propiedad, propietario, inquilino, inicio, fin</text>
+<text x="880" y="503" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">cuotas: List&lt;CuotaContrato&gt;</text>
+<polyline points="390,240 390,360" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="380.89091476652015,343.32593132408294 390,360 399.10908523347985,343.32593132408294" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="740,465 860,465" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<polyline points="843.325931324083,474.10908523347985 860,465 843.325931324083,455.89091476652015" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1210,240 1210,360" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<polyline points="1200.8909147665202,343.32593132408294 1210,360 1219.1090852334798,343.32593132408294" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="40" y="690" width="700" height="210" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="40" y="690" width="700" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="390.0" y="734" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">AlquilerDao</text>
+<text x="60" y="795" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">+ estadoContrato(conexion, id): EstadoContrato</text>
+<text x="60" y="831" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">- cuotasContrato(conexion, id): List&lt;CuotaContrato&gt;</text>
+<rect x="860" y="690" width="700" height="210" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="860" y="690" width="700" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1210.0" y="734" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">CuotaContrato «record»</text>
+<text x="880" y="797" font-family="Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#173B3A">periodo, vencimiento, importe</text>
+<text x="880" y="835" font-family="Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#173B3A">capitalCobrado, moraCobrada, saldo</text>
+<polyline points="390,570 390,690" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="380.89091476652015,673.325931324083 390,690 399.10908523347985,673.325931324083" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1210,570 1210,690" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1200.8909147665202,673.325931324083 1210,690 1219.1090852334798,673.325931324083" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="1270" y="646" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">0..*</text>
+<rect x="40" y="1030" width="700" height="210" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="40" y="1030" width="700" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="390.0" y="1074" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">Configuracion</text>
+<text x="60" y="1136" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">+ validar(): void</text>
+<text x="60" y="1173" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">+ obligatorio(nombre): String</text>
+<text x="60" y="1210" font-family="Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#173B3A">+ valor(nombre, predeterminado): String</text>
+<rect x="860" y="1030" width="700" height="210" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="860" y="1030" width="700" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1210.0" y="1074" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">Lectores de configuración</text>
+<text x="880" y="1135" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">PropieraApp · BaseDatos · AutenticacionService</text>
+<text x="880" y="1171" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">El entorno tiene prioridad sobre .env.</text>
+<polyline points="860,1150 740,1150" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="756.674068675917,1140.8909147665202 740,1150 756.674068675917,1159.1090852334798" fill="none" stroke="#173B3A" stroke-width="3"/>
+</svg>

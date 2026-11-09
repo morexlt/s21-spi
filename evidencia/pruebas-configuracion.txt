@@ -1,5 +1,5 @@
 2026-11-08
-
+Base: propiera_revision_20261108_222727_negocio
 PASS CF01 archivo ausente permite entorno
 PASS CF02 UTF-8, BOM, comentarios y espacios
 PASS CF03 conserva parámetros de URL
@@ -15,8 +15,3 @@ PASS CF12 entorno explícito tiene prioridad
 PASS CF13 vacío explícito no usa clave anterior
 PASS CF14 error claro si falta configuración
 RESULTADO: 14 verificaciones de configuración aprobadas.
-
-Verificación local sin variables PROPIERA en el entorno:
-PASS conexión usando sólo .env: propiera_ap4_video_20261108_192421_24349
-PASS ingreso administrativo usando sólo .env y rol verificado en MySQL
-PASS ingreso martillero usando sólo .env y rol verificado en MySQL

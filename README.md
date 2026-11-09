@@ -13,7 +13,7 @@ Repositorio: https://github.com/morexlt/s21-spi
 - Consultar cuotas, vencimientos y saldos.
 - Registrar pagos parciales o completos, con capital y mora separados.
 - Confirmar el nuevo importe mensual de un tramo de ajuste.
-- Administrativo registra y consulta. Martillero sólo consulta.
+- Administrativo registra, consulta y exporta. Martillero consulta y exporta.
 - Validar contratos superpuestos, referencias duplicadas y pagos superiores al saldo.
 
 Cada propiedad tiene un propietario. Los datos del propietario se obtienen de la
@@ -52,7 +52,8 @@ En Datos básicos, elegir Propietarios, Propiedades o Inquilinos. Nuevo limpia e
 formulario; seleccionar una fila permite modificar sus datos. Guardar registra
 los cambios. Documento y nombre son obligatorios para las personas; el contacto
 es opcional. La propiedad requiere código, dirección y un propietario activo.
-Los documentos y códigos son únicos, incluso entre registros inactivos.
+El documento es único dentro de cada tipo de persona y el código es único para
+las propiedades. La unicidad incluye los registros inactivos.
 
 Dar de baja marca el registro como inactivo y conserva contratos, cuotas y cobros.
 Para reactivarlo, seleccionarlo, marcar Activo y guardar. Los inactivos no pueden
@@ -82,11 +83,12 @@ antes de moverlo al destino, para conservar el archivo anterior ante un error.
 ```
 src/propiera/
   PropieraApp.java       inicio de la aplicación
+  configuracion/        lectura de .env y variables de entorno
   modelo/               datos del usuario, participantes, propiedades, contratos y cuotas
   vista/                ventanas, formularios y modelo de la tabla Swing
   controlador/          acciones de los botones y coordinación de las vistas
   servicio/             validaciones y operaciones del negocio
-  persistencia/         conexión JDBC y consultas SQL
+  persistencia/         conexión JDBC, consultas SQL y escritura del TXT
 ```
 
 Las vistas no consultan MySQL ni validan reglas del negocio. El controlador
@@ -166,7 +168,7 @@ En una base remota se debe verificar la identidad del servidor con un certificad
 válido. Esta autenticación de demostración no reemplaza cuentas individuales,
 contraseñas almacenadas de forma segura ni auditoría para uso real.
 
-.env y sus copias locales están excluidos de Git y del paquete de entrega.
+.env y sus copias locales están excluidos de Git.
 .env.example se incluye sin contraseñas. En IntelliJ, configurar el directorio
 de trabajo como la carpeta del proyecto y ejecutar propiera.PropieraApp.
 
@@ -238,16 +240,6 @@ sql/06_verificacion_persistencia.sql consulta las cuotas y los cobros del
 escenario de presentación. Su resultado está en evidencia/consulta-presentacion.txt
 y la captura correspondiente en evidencia/pantallas/09_consulta_mysql.png.
 
-## Archivos
-
-Las fuentes están en src/, las pruebas en tests/ y la base en sql/.
-Los diagramas están en diagramas/ y los resultados de las pruebas en evidencia/.
-
-El conector JDBC se descarga en lib/ sólo si falta. El paquete de entrega
-contiene las fuentes, los scripts SQL, las pruebas y los diagramas.
-Las dependencias binarias, los archivos compilados y las credenciales
-no forman parte del paquete.
-
 PruebasCatalogos comprueba altas, modificaciones, bajas lógicas, reactivaciones,
 permisos, duplicados concurrentes, conservación del historial y formularios vacíos.
 Para probar los archivos, usar otra base exclusiva con SQL 01, 02 y 05 y ejecutar:
@@ -264,3 +256,13 @@ Para verificar el lector de configuración sin usar MySQL:
 ```sh
 java -cp 'build/classes' propiera.configuracion.PruebasConfiguracion
 ```
+
+## Archivos
+
+Las fuentes están en src/, las pruebas en tests/ y la base en sql/.
+Los diagramas están en diagramas/ y los resultados de las pruebas en evidencia/.
+
+El conector JDBC se descarga en lib/ sólo si falta. El repositorio
+contiene las fuentes, los scripts SQL, las pruebas y los diagramas.
+Las dependencias binarias, los archivos compilados y las credenciales
+no forman parte del repositorio.

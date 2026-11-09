@@ -1,6 +1,5 @@
 2026-11-08
-Base aislada: propiera_ap4_exportacion_pruebas_20261108
-
+Base: propiera_revision_20261108_222727_archivos
 PASS EX01 contrato completo ordenado
 PASS EX02 identidad del contrato
 PASS EX03 cobro parcial y saldo persistidos
@@ -24,5 +23,5 @@ PASS EX20 no reemplazar carpetas
 PASS EX21 temporales eliminados
 PASS EX22 baja lógica conserva exportación histórica
 PASS EX23 encabezados de una línea
-Archivos de prueba: /var/folders/18/9jpzsqq177sbykqyhvqnlkg80000gn/T/propiera-exportacion-17011129403863189076
+Archivos de prueba: /var/folders/18/9jpzsqq177sbykqyhvqnlkg80000gn/T/propiera-exportacion-5502814943128836040
 RESULTADO: 23 verificaciones de exportación aprobadas.
