@@ -9,10 +9,20 @@ import propiera.controlador.AlquilerControlador;
 import propiera.servicio.AutenticacionService;
 import propiera.servicio.CatalogoService;
 import propiera.vista.LoginVista;
+import propiera.configuracion.Configuracion;
+import javax.swing.JOptionPane;
 
 public class PropieraApp {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
+            try {
+                Configuracion.validar();
+            } catch (IllegalStateException error) {
+                JOptionPane.showMessageDialog(null, error.getMessage()
+                    + "\nRevisá el archivo .env en la carpeta del proyecto.",
+                    "Configuración de Propiera", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             try {
                 UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             } catch (Exception error) {

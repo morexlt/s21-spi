@@ -120,8 +120,8 @@ estructura fija; la cantidad de cuotas cambia con los contratos registrados.
 Requisitos: JDK 21 o superior, MySQL 8.4 y Connector/J 9.4.0.
 Swing forma parte del JDK. La compilación se realiza mediante compilar.sh.
 
-Para usar una base nueva con Docker, definir PROPIERA_MYSQL_ROOT_PASSWORD
-y PROPIERA_DB_PASSWORD y ejecutar `docker compose up -d`.
+Para usar una base nueva con Docker, completar PROPIERA_MYSQL_ROOT_PASSWORD
+y PROPIERA_DB_PASSWORD en .env y ejecutar `docker compose up -d`.
 El servicio utiliza el puerto local 33316 y crea la base propiera_ap4.
 Esperar a que termine la inicialización. Si ya existe MySQL, crear una base
 vacía utf8mb4 y cargar sql/01_esquema.sql y sql/02_datos_demo.sql.
@@ -135,25 +135,40 @@ Las pruebas automáticas de negocio utilizan sólo 01 y 02, sin este escenario.
 
 ## Ejecutar
 
-Desde esta carpeta, definir las variables en la misma terminal:
+Crear .env en la carpeta del proyecto a partir de .env.example, si todavía
+no existe. Completar la URL, el usuario de MySQL y las tres contraseñas:
+la de MySQL y las de los perfiles Administrativo y Martillero.
 
 ```sh
-export PROPIERA_DB_USER=propiera
-export PROPIERA_DB_PASSWORD='clave de la base'
-export PROPIERA_ADMIN_PASSWORD='clave del administrativo'
-export PROPIERA_MARTILLERO_PASSWORD='clave del martillero'
+cp -n .env.example .env
+# Completar .env antes de ejecutar.
 bash ejecutar.sh
 ```
 
+Java lee .env directamente con Configuracion. No se necesita un complemento de
+IntelliJ ni ejecutar el archivo como un script. Se admiten líneas vacías,
+comentarios en líneas separadas, valores sin comillas o entre comillas simples
+o dobles. No se expanden variables ni se ejecutan comandos del archivo.
+Los errores indican el nombre de la variable o el número de línea, sin mostrar
+contraseñas. Después de cambiar .env hay que reiniciar la aplicación.
+
+Una variable definida explícitamente en el entorno tiene prioridad sobre .env.
+Esto permite ejecutar las pruebas en otra base sin cambiar la configuración
+local. Una variable vacía se considera un error si es obligatoria.
+
 El script compila y abre la ventana de ingreso. Los usuarios de demostración
-son `administrativo` y `martillero`. Las claves se toman del entorno y los
-perfiles se comprueban contra los usuarios activos de la base.
+son administrativo y martillero. Sus claves están en PROPIERA_ADMIN_PASSWORD
+y PROPIERA_MARTILLERO_PASSWORD; sus roles y estados se verifican en MySQL.
 
 PROPIERA_DB_URL permite cambiar la conexión. Por defecto se usa
 `jdbc:mysql://127.0.0.1:33316/propiera_ap4?sslMode=REQUIRED&connectionTimeZone=America/Argentina/Buenos_Aires`.
 En una base remota se debe verificar la identidad del servidor con un certificado
 válido. Esta autenticación de demostración no reemplaza cuentas individuales,
 contraseñas almacenadas de forma segura ni auditoría para uso real.
+
+.env y sus copias locales están excluidos de Git y del paquete de entrega.
+.env.example se incluye sin contraseñas. En IntelliJ, configurar el directorio
+de trabajo como la carpeta del proyecto y ejecutar propiera.PropieraApp.
 
 En macOS los scripts detectan el OpenJDK instalado por Homebrew.
 En otros entornos se puede configurar JAVA_HOME o disponer de Java en PATH.
@@ -243,3 +258,9 @@ java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasExportac
 
 Esta prueba escribe y vuelve a leer TXT en una carpeta temporal; comprueba UTF-8,
 totales, cuotas pendientes, autorización, reemplazo y errores de escritura.
+
+Para verificar el lector de configuración sin usar MySQL:
+
+```sh
+java -cp 'build/classes' propiera.configuracion.PruebasConfiguracion
+```

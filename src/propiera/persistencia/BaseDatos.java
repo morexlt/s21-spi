@@ -9,21 +9,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import propiera.configuracion.Configuracion;
 
 public final class BaseDatos {
     public Connection abrir() throws SQLException {
-        String url = System.getenv().getOrDefault("PROPIERA_DB_URL",
+        String url = Configuracion.valor("PROPIERA_DB_URL",
             "jdbc:mysql://127.0.0.1:33316/propiera_ap4?sslMode=REQUIRED&connectionTimeZone=America/Argentina/Buenos_Aires");
         return DriverManager.getConnection(url,
-            obligatorio("PROPIERA_DB_USER"), obligatorio("PROPIERA_DB_PASSWORD"));
-    }
-
-    public static String obligatorio(String nombre) {
-        String valor = System.getenv(nombre);
-        if (valor == null || valor.isBlank()) {
-            throw new IllegalStateException("Falta configurar " + nombre);
-        }
-        return valor;
+            Configuracion.obligatorio("PROPIERA_DB_USER"), Configuracion.obligatorio("PROPIERA_DB_PASSWORD"));
     }
 
     public static PreparedStatement preparar(Connection conexion, String sql,

@@ -1,4 +1,4 @@
-Base aislada: propiera_ap4_archivos_pruebas_20261108
+Base aislada: propiera_ap4_env_pruebas_20261108
 03_consultas.sql
 id	periodo	vencimiento	importe	saldo	estado
 49	2020-01-01	2020-01-10	300000.00	300000.00	VENCIDA

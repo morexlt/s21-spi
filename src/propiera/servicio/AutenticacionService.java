@@ -7,6 +7,7 @@ import java.util.Arrays;
 import propiera.persistencia.BaseDatos;
 import propiera.modelo.Usuario;
 import propiera.persistencia.UsuarioDao;
+import propiera.configuracion.Configuracion;
 
 public class AutenticacionService {
     private final UsuarioDao usuarios;
@@ -33,7 +34,7 @@ public class AutenticacionService {
             default -> throw new IllegalArgumentException("Usuario o contraseña incorrectos.");
         }
 
-        String esperada = BaseDatos.obligatorio(variable);
+        String esperada = Configuracion.obligatorio(variable);
         byte[] ingresada = new String(clave).getBytes(StandardCharsets.UTF_8);
         boolean coincide = MessageDigest.isEqual(ingresada, esperada.getBytes(StandardCharsets.UTF_8));
         Arrays.fill(ingresada, (byte) 0);

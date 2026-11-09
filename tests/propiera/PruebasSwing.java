@@ -22,6 +22,7 @@ import propiera.vista.FormularioContrato;
 import propiera.vista.FormularioPago;
 import propiera.vista.TablaCuotasModelo;
 import propiera.vista.ImporteRenderizador;
+import propiera.configuracion.Configuracion;
 
 public class PruebasSwing {
     private static int total;
@@ -36,7 +37,7 @@ public class PruebasSwing {
 
     private static Usuario ingresar(AutenticacionService servicio, String usuario,
             String variable) throws Exception {
-        char[] clave = BaseDatos.obligatorio(variable).toCharArray();
+        char[] clave = Configuracion.obligatorio(variable).toCharArray();
         try {
             return servicio.ingresar(usuario, clave);
         } finally {

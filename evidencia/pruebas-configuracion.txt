@@ -1,0 +1,22 @@
+2026-11-08
+
+PASS CF01 archivo ausente permite entorno
+PASS CF02 UTF-8, BOM, comentarios y espacios
+PASS CF03 conserva parámetros de URL
+PASS CF04 comillas y símbolos literales
+PASS CF05 valores vacíos y prefijo export
+PASS CF06 no ejecuta contenido del archivo
+PASS CF07 línea sin asignación
+PASS CF08 nombre inválido
+PASS CF09 comillas incompletas
+PASS CF10 variables duplicadas
+PASS CF11 lectura desde directorio del proyecto
+PASS CF12 entorno explícito tiene prioridad
+PASS CF13 vacío explícito no usa clave anterior
+PASS CF14 error claro si falta configuración
+RESULTADO: 14 verificaciones de configuración aprobadas.
+
+Verificación local sin variables PROPIERA en el entorno:
+PASS conexión usando sólo .env: propiera_ap4_video_20261108_192421_24349
+PASS ingreso administrativo usando sólo .env y rol verificado en MySQL
+PASS ingreso martillero usando sólo .env y rol verificado en MySQL
