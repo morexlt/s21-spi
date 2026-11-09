@@ -31,9 +31,11 @@ public class PrincipalVista extends JFrame {
     private final FormularioContrato contrato = new FormularioContrato();
     private final FormularioPago pago = new FormularioPago();
     private final FormularioAjuste ajuste = new FormularioAjuste();
+    private final CatalogosVista catalogos = new CatalogosVista();
     private final JButton actualizar = new JButton("Actualizar cuotas");
     private final JButton cobrar = new JButton("Cobrar cuota seleccionada");
     private final JButton confirmarAjuste = new JButton("Confirmar ajuste del tramo");
+    private final JButton exportar = new JButton("Exportar cuotas");
     private final JLabel estado = new JLabel(" ");
     private final JLabel resumen = EstiloVista.ayuda("Sin cuotas cargadas");
     private final boolean puedeCargar;
@@ -96,6 +98,8 @@ public class PrincipalVista extends JFrame {
             acciones.add(javax.swing.Box.createHorizontalStrut(12));
             acciones.add(confirmarAjuste);
         }
+        acciones.add(javax.swing.Box.createHorizontalStrut(12));
+        acciones.add(exportar);
         JPanel herramientas = new JPanel(new BorderLayout(0, 10));
         herramientas.setOpaque(false);
         herramientas.add(filtro, BorderLayout.NORTH);
@@ -111,6 +115,7 @@ public class PrincipalVista extends JFrame {
             pestanas.addTab("Registrar contrato", contenerFormulario(contrato));
             pestanas.addTab("Registrar pago", contenerFormulario(pago));
             pestanas.addTab("Confirmar ajuste", contenerFormulario(ajuste));
+            pestanas.addTab("Datos básicos", catalogos);
         }
         add(pestanas, BorderLayout.CENTER);
         estado.setBorder(BorderFactory.createEmptyBorder(10, 20, 12, 20));
@@ -157,6 +162,7 @@ public class PrincipalVista extends JFrame {
         boolean seleccionada = tabla.getSelectedRow() >= 0;
         cobrar.setEnabled(!ocupado && puedeCargar && seleccionada);
         confirmarAjuste.setEnabled(!ocupado && puedeCargar && seleccionada);
+        exportar.setEnabled(!ocupado && seleccionada);
     }
 
     public Cuota cuotaSeleccionada() {
@@ -169,6 +175,9 @@ public class PrincipalVista extends JFrame {
     }
     public FormularioContrato contrato() {
         return contrato;
+    }
+    public CatalogosVista catalogos() {
+        return catalogos;
     }
     public FormularioAjuste ajuste() {
         return ajuste;
@@ -191,9 +200,13 @@ public class PrincipalVista extends JFrame {
     public JButton cobrar() {
         return cobrar;
     }
+    public JButton exportar() {
+        return exportar;
+    }
 
     public void ocupado(boolean ocupado) {
         this.ocupado = ocupado;
+        catalogos.ocupado(ocupado || !puedeCargar);
         actualizar.setEnabled(!ocupado);
         actualizarAcciones();
         ajuste.guardar().setEnabled(!ocupado && puedeCargar);

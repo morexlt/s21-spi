@@ -7,6 +7,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import propiera.controlador.AlquilerControlador;
 import propiera.servicio.AutenticacionService;
+import propiera.servicio.CatalogoService;
 import propiera.vista.LoginVista;
 
 public class PropieraApp {
@@ -22,7 +23,8 @@ public class PropieraApp {
             AlquilerService servicio = new AlquilerService(baseDatos);
             AutenticacionService autenticacion = new AutenticacionService(baseDatos);
             LoginVista login = new LoginVista();
-            AlquilerControlador controlador = new AlquilerControlador(servicio, autenticacion, login);
+            AlquilerControlador controlador = new AlquilerControlador(servicio, autenticacion, login,
+                new CatalogoService(baseDatos));
             controlador.iniciar();
         });
     }

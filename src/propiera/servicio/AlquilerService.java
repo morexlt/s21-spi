@@ -18,6 +18,9 @@ import propiera.modelo.Opcion;
 import propiera.persistencia.AlquilerDao;
 import propiera.persistencia.OperacionDao;
 import propiera.persistencia.AjusteDao;
+import propiera.persistencia.UsuarioDao;
+import propiera.modelo.EstadoContrato;
+import propiera.modelo.Usuario;
 
 public final class AlquilerService {
     private final BaseDatos baseDatos;
@@ -178,6 +181,27 @@ public final class AlquilerService {
 
     public List<Cuota> consultarCuotas() throws SQLException {
         return consultas.cuotas();
+    }
+
+    public EstadoContrato consultarContrato(long contrato, long usuario) throws SQLException {
+        exigir(contrato > 0, "Seleccioná una cuota del contrato que querés exportar");
+        try (Connection conexion = baseDatos.abrir()) {
+            conexion.setReadOnly(true);
+            conexion.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
+            conexion.setAutoCommit(false);
+            try {
+                Usuario cuenta = new UsuarioDao(baseDatos).buscarActivo(conexion, usuario);
+                exigir(cuenta != null && (cuenta.puedeCargar() || "MARTILLERO".equals(cuenta.rol())),
+                    "El usuario no puede consultar contratos");
+                EstadoContrato estado = consultas.estadoContrato(conexion, contrato);
+                exigir(estado != null, "El contrato no existe");
+                conexion.commit();
+                return estado;
+            } catch (SQLException | RuntimeException error) {
+                conexion.rollback();
+                throw error;
+            }
+        }
     }
 
     public List<Opcion> propiedades() throws SQLException {

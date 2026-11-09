@@ -1,0 +1,20 @@
+2026-11-08
+Bases aisladas: propiera_ap4_abm_gui_final_20261108, propiera_ap4_abm_circuito_final_20261108, propiera_ap4_abm_filtro_final_20261108, propiera_ap4_abm_martillero_final_20261108
+
+PASS GUI ABM: altas de propietario/propiedad/inquilino, modificación, baja y reactivación; contrato y 12 cuotas desde registros nuevos; formulario vacío al inicio y después de guardar; historial conservado; tamaño mínimo.
+PASS GUI circuito: contrato, cobro parcial y ajuste por interfaz real.
+PASS GUI Administrativo: filtro P-002, resumen y recarga conservando selección.
+PASS GUI Martillero: sólo consulta; filtro y resumen conservados.
+PASS Administrativo dispone de cinco pestañas
+PASS Sin selección no se habilitan las acciones de la tabla
+PASS La selección ordenada corresponde al identificador del modelo
+PASS Las acciones se habilitan al seleccionar una fila
+PASS Durante la operación se deshabilitan las acciones y los tres guardados
+PASS Al terminar se recuperan los botones
+PASS Formulario 1: guardar visible al abrir
+PASS Formulario 2: guardar visible al abrir
+PASS Formulario 3: guardar visible al abrir
+PASS Formulario 1: guardar accesible en ventana mínima
+PASS Formulario 2: guardar accesible en ventana mínima
+PASS Formulario 3: guardar accesible en ventana mínima
+PASS Martillero conserva una sola pestaña de consulta

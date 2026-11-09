@@ -17,7 +17,7 @@ public class OperacionDao {
 
     public boolean inquilinoActivo(Connection conexion, long inquilino) throws SQLException {
         return !BaseDatos.consultar(conexion,
-            "SELECT id FROM inquilino WHERE id=? AND activo=TRUE", inquilino).isEmpty();
+            "SELECT id FROM inquilino WHERE id=? AND activo=TRUE FOR UPDATE", inquilino).isEmpty();
     }
 
     public boolean bloquearPropiedad(Connection conexion, long propiedad) throws SQLException {
@@ -29,7 +29,7 @@ public class OperacionDao {
         }
         long propietario = Long.parseLong(filas.get(0).get(0));
         return !BaseDatos.consultar(conexion,
-            "SELECT id FROM propietario WHERE id=? AND activo=TRUE", propietario).isEmpty();
+            "SELECT id FROM propietario WHERE id=? AND activo=TRUE FOR UPDATE", propietario).isEmpty();
     }
 
     public boolean contratoSuperpuesto(Connection conexion, AltaContrato alta) throws SQLException {

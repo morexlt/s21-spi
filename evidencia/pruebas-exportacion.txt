@@ -1,0 +1,28 @@
+2026-11-08
+Base aislada: propiera_ap4_exportacion_pruebas_20261108
+
+PASS EX01 contrato completo ordenado
+PASS EX02 identidad del contrato
+PASS EX03 cobro parcial y saldo persistidos
+PASS EX04 meses sin confirmar siguen nulos
+PASS EX05 Martillero puede exportar
+PASS EX06 usuario inexistente
+PASS EX07 contrato inexistente
+PASS EX08 contrato sin seleccionar
+PASS EX09 usuario inactivo
+PASS EX10 escritura y lectura UTF-8
+PASS EX11 todas las cuotas y vencimientos
+PASS EX12 totales confirmados y cobros
+PASS EX13 pendientes identificados sin saldo ficticio
+PASS EX14 sólo el contrato elegido
+PASS EX15 no reemplazar sin confirmación
+PASS EX16 reemplazo confirmado
+PASS EX17 mora separada del capital
+PASS EX18 cuotas pagadas y pendientes
+PASS EX19 error de escritura no altera archivo previo
+PASS EX20 no reemplazar carpetas
+PASS EX21 temporales eliminados
+PASS EX22 baja lógica conserva exportación histórica
+PASS EX23 encabezados de una línea
+Archivos de prueba: /var/folders/18/9jpzsqq177sbykqyhvqnlkg80000gn/T/propiera-exportacion-17011129403863189076
+RESULTADO: 23 verificaciones de exportación aprobadas.

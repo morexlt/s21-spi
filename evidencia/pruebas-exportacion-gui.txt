@@ -1,0 +1,17 @@
+2026-11-08
+Base aislada: propiera_ap4_exportacion_gui_20261108
+
+PASS GE01 sin selección exportar deshabilitado
+PASS GE02 selección de cuota pendiente habilita exportar
+PASS GE03 exportar bloqueado durante operación
+PASS GE04 exportar visible en tamaño mínimo
+PASS GE05 cancelar no genera archivos
+PASS GE06 guardar agrega extensión y mantiene UTF-8
+PASS GE07 exporta sólo el contrato, no toda la propiedad
+PASS GE08 saldos y pendientes correctos
+PASS GE09 reemplazo requiere confirmación
+PASS GE10 cancelar reemplazo conserva archivo
+PASS GE11 Martillero consulta y exporta
+PASS GE12 exportación sigue selección ordenada
+Archivos GUI: /var/folders/18/9jpzsqq177sbykqyhvqnlkg80000gn/T/propiera-gui-exportacion-2834086428709837197
+RESULTADO: 12 verificaciones GUI de exportación aprobadas.

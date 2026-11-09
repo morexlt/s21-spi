@@ -5,12 +5,14 @@
 <text x="80" y="149" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- contrato: FormularioContrato</text>
 <text x="80" y="189" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- pago: FormularioPago</text>
 <text x="80" y="229" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- ajuste: FormularioAjuste</text>
+<text x="80" y="269" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- catalogos: CatalogosVista</text>
 <rect x="830" y="40" width="710" height="240" fill="white" stroke="#087F73" stroke-width="3"/>
 <rect x="830" y="40" width="710" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
 <text x="1185.0" y="84" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">AlquilerControlador</text>
 <text x="850" y="150" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">- servicio: AlquilerService</text>
-<text x="850" y="191" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">- ventana: PrincipalVista</text>
-<text x="850" y="232" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">+ iniciar(): void</text>
+<text x="850" y="191" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">- catalogos: CatalogoService</text>
+<text x="850" y="232" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">- ventana: PrincipalVista</text>
+<text x="850" y="273" font-family="Arial,sans-serif" font-size="30" font-weight="400" text-anchor="start" fill="#173B3A">+ iniciar(): void</text>
 <polyline points="830,155 770,155" fill="none" stroke="#173B3A" stroke-width="3"/>
 <polyline points="786.674068675917,145.89091476652015 770,155 786.674068675917,164.10908523347985" fill="none" stroke="#173B3A" stroke-width="3"/>
 <rect x="60" y="420" width="710" height="300" fill="white" stroke="#087F73" stroke-width="3"/>

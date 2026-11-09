@@ -118,6 +118,11 @@ public class PruebasSwing {
             var selectores = Arrays.stream(contrato.getComponents())
                 .filter(componente -> componente instanceof JComboBox<?>)
                 .map(componente -> (JComboBox<?>) componente).toList();
+            var campos = Arrays.stream(contrato.getComponents())
+                .filter(componente -> componente instanceof javax.swing.JTextField)
+                .map(componente -> (javax.swing.JTextField) componente).toList();
+            campos.get(0).setText("2026-02-01");
+            campos.get(2).setText("123456.78");
             selectores.get(0).setSelectedIndex(1);
             selectores.get(1).setSelectedIndex(1);
             String importeAnterior = contrato.importe();

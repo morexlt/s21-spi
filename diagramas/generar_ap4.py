@@ -61,7 +61,7 @@ def generar():
         d.texto(x,y+116,n,28,True,True)
     actor(145,500,'Administrativo')
     actor(1460,850,'Martillero')
-    casos=[(390,150,790,265,'CU-00\nDatos maestros'),(390,355,790,470,'CU-01\nRegistrar contrato'),
+    casos=[(390,150,790,265,'CU-00\nABM de datos básicos'),(390,355,790,470,'CU-01\nRegistrar contrato'),
            (870,150,1270,265,'CU-08\nConfirmar ajuste'),(870,355,1270,470,'CU-07\nGenerar cuotas'),
            (390,590,790,705,'CU-02\nRegistrar pago'),(390,800,790,915,'CU-03\nRegistrar gasto'),
            (870,660,1270,775,'CU-04\nGenerar liquidación'),(870,890,1270,1005,'CU-05\nAprobar / registrar pago'),
@@ -82,9 +82,9 @@ def generar():
 
     d=Diagrama('04_diseno',1600,1300)
     d.caja(60,40,710,240,'PrincipalVista «JFrame»',[
-        '- contrato: FormularioContrato', '- pago: FormularioPago', '- ajuste: FormularioAjuste'],29)
+        '- contrato: FormularioContrato', '- pago: FormularioPago', '- ajuste: FormularioAjuste', '- catalogos: CatalogosVista'],29)
     d.caja(830,40,710,240,'AlquilerControlador',[
-        '- servicio: AlquilerService', '- ventana: PrincipalVista', '+ iniciar(): void'],30)
+        '- servicio: AlquilerService', '- catalogos: CatalogoService', '- ventana: PrincipalVista', '+ iniciar(): void'],30)
     d.linea([(830,155),(770,155)],arrow=True)
     d.caja(60,420,710,300,'AlquilerService',[
         '- operaciones: OperacionDao; - ajustes: AjusteDao',

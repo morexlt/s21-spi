@@ -1,0 +1,35 @@
+PROPIERA - ESTADO DE CUOTAS
+Contrato: 1
+Propiedad: P-001 · Roca 425
+Propietario: Ana Muñoz
+Inquilino: Lucía Núñez
+Vigencia: 01/01/2026 al 31/12/2026
+Generado: 08/11/2026 21:04
+Importes en pesos argentinos.
+
+Período | Vencimiento | Importe | Capital cobrado | Mora cobrada | Saldo de capital
+01/2026 | 10/01/2026 | $300.000,00 | $100.000,00 | $0,00 | $200.000,00
+02/2026 | 10/02/2026 | $300.000,00 | $0,00 | $0,00 | $300.000,00
+03/2026 | 10/03/2026 | $300.000,00 | $0,00 | $0,00 | $300.000,00
+04/2026 | 10/04/2026 | $360.000,00 | $0,00 | $0,00 | $360.000,00
+05/2026 | 10/05/2026 | $360.000,00 | $0,00 | $0,00 | $360.000,00
+06/2026 | 10/06/2026 | $360.000,00 | $0,00 | $0,00 | $360.000,00
+07/2026 | 10/07/2026 | Pendiente de ajuste | $0,00 | $0,00 | Pendiente de ajuste
+08/2026 | 10/08/2026 | Pendiente de ajuste | $0,00 | $0,00 | Pendiente de ajuste
+09/2026 | 10/09/2026 | Pendiente de ajuste | $0,00 | $0,00 | Pendiente de ajuste
+10/2026 | 10/10/2026 | Pendiente de ajuste | $0,00 | $0,00 | Pendiente de ajuste
+11/2026 | 10/11/2026 | Pendiente de ajuste | $0,00 | $0,00 | Pendiente de ajuste
+12/2026 | 10/12/2026 | Pendiente de ajuste | $0,00 | $0,00 | Pendiente de ajuste
+
+Cuotas del contrato: 12
+Cuotas con importe confirmado: 6
+Cuotas con capital cancelado: 0
+Cuotas con saldo: 6
+Cuotas pendientes de ajuste: 6
+Capital confirmado: $1.980.000,00
+Capital cobrado: $100.000,00
+Mora cobrada: $0,00
+Saldo de capital de cuotas confirmadas: $1.880.000,00
+
+Las cuotas pendientes de ajuste no están incluidas en el saldo: todavía no tienen importe confirmado.
+La mora cobrada se informa por separado y no reduce el saldo de capital.

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1240" viewBox="0 0 1600 1240"><rect width="100%" height="100%" fill="white"/>
+<rect x="40" y="30" width="720" height="240" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="40" y="30" width="720" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="400.0" y="74" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">CatalogosVista</text>
+<text x="60" y="139" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- propietarios: PanelPersonas</text>
+<text x="60" y="179" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- propiedades: PanelPropiedades</text>
+<text x="60" y="219" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- inquilinos: PanelPersonas</text>
+<text x="60" y="259" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">+ cargar(datos): void</text>
+<rect x="840" y="30" width="720" height="240" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="840" y="30" width="720" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1200.0" y="74" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">CatalogoControlador</text>
+<text x="860" y="139" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- servicio: CatalogoService</text>
+<text x="860" y="179" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">- ventana: PrincipalVista</text>
+<text x="860" y="219" font-family="Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#173B3A">+ iniciar(): void</text>
+<polyline points="840,145 760,145" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="776.674068675917,135.89091476652015 760,145 776.674068675917,154.10908523347985" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="40" y="420" width="720" height="290" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="40" y="420" width="720" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="400.0" y="464" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">CatalogoService</text>
+<text x="60" y="528" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">+ consultar(usuario): DatosCatalogo</text>
+<text x="60" y="567" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">+ guardarPersona(tipo, datos, usuario): long</text>
+<text x="60" y="606" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">+ guardarPropiedad(datos, usuario): long</text>
+<text x="60" y="645" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="start" fill="#173B3A">+ bajaPersona(...), bajaPropiedad(...)</text>
+<rect x="840" y="420" width="720" height="290" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="840" y="420" width="720" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1200.0" y="464" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">CatalogoDao</text>
+<text x="860" y="527" font-family="Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#173B3A">+ personas(...), propiedades(...)</text>
+<text x="860" y="565" font-family="Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#173B3A">+ guardarPersona(...), guardarPropiedad(...)</text>
+<text x="860" y="603" font-family="Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#173B3A">+ bloquearPersona(...), bloquearPropiedad(...)</text>
+<text x="860" y="641" font-family="Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#173B3A">+ bajaPersona(...), bajaPropiedad(...)</text>
+<polyline points="1200,270 1200,340 400,340 400,420" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="390.89091476652015,403.32593132408294 400,420 409.10908523347985,403.32593132408294" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="760,555 840,555" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="823.325931324083,564.1090852334798 840,555 823.325931324083,545.8909147665202" fill="none" stroke="#173B3A" stroke-width="3"/>
+<rect x="40" y="870" width="460" height="220" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="40" y="870" width="460" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="270.0" y="914" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">Persona «record»</text>
+<text x="60" y="975" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">id, documento, nombre, contacto</text>
+<text x="60" y="1011" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">activo</text>
+<rect x="570" y="870" width="460" height="220" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="570" y="870" width="460" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="800.0" y="914" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">Propiedad «record»</text>
+<text x="590" y="975" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">id, codigo, direccion</text>
+<text x="590" y="1011" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">propietario, nombrePropietario</text>
+<text x="590" y="1047" font-family="Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#173B3A">activo</text>
+<rect x="1100" y="870" width="460" height="220" fill="white" stroke="#087F73" stroke-width="3"/>
+<rect x="1100" y="870" width="460" height="62" fill="#EAF5F3" stroke="#087F73" stroke-width="3"/>
+<text x="1330.0" y="914" font-family="Arial,sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#173B3A">BaseDatos</text>
+<text x="1120" y="972" font-family="Arial,sans-serif" font-size="22" font-weight="400" text-anchor="start" fill="#173B3A">+ abrir(): Connection</text>
+<text x="1120" y="1005" font-family="Arial,sans-serif" font-size="22" font-weight="400" text-anchor="start" fill="#173B3A">+ preparar(...): PreparedStatement</text>
+<text x="1120" y="1038" font-family="Arial,sans-serif" font-size="22" font-weight="400" text-anchor="start" fill="#173B3A">+ insertar(...): long</text>
+<polyline points="270,710 270,870" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<polyline points="260.89091476652015,853.325931324083 270,870 279.10908523347985,853.325931324083" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="550,710 550,790 800,790 800,870" fill="none" stroke="#173B3A" stroke-width="3" stroke-dasharray="12 10"/>
+<polyline points="790.8909147665202,853.325931324083 800,870 809.1090852334798,853.325931324083" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1330,710 1330,870" fill="none" stroke="#173B3A" stroke-width="3"/>
+<polyline points="1320.8909147665202,853.325931324083 1330,870 1339.1090852334798,853.325931324083" fill="none" stroke="#173B3A" stroke-width="3"/>
+<text x="800" y="1178" font-family="Arial,sans-serif" font-size="28" font-weight="400" text-anchor="middle" fill="#173B3A">El servicio valida permisos y conserva el historial. El DAO ejecuta el SQL con JDBC.</text>
+</svg>

@@ -14,8 +14,13 @@ public class UsuarioDao {
     }
 
     public Usuario buscarActivo(long id) throws SQLException {
-        try (Connection conexion = baseDatos.abrir();
-             PreparedStatement consulta = BaseDatos.preparar(conexion,
+        try (Connection conexion = baseDatos.abrir()) {
+            return buscarActivo(conexion, id);
+        }
+    }
+
+    public Usuario buscarActivo(Connection conexion, long id) throws SQLException {
+        try (PreparedStatement consulta = BaseDatos.preparar(conexion,
                  "SELECT nombre, rol FROM usuario WHERE id=? AND activo=TRUE", id);
              ResultSet resultado = consulta.executeQuery()) {
             if (!resultado.next()) {

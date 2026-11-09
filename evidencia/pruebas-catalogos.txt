@@ -1,0 +1,45 @@
+2026-11-08
+Base aislada: propiera_ap4_archivos_pruebas_20261108
+
+PASS CA01 alta de propietario y espacios
+PASS CA02 documento duplicado
+PASS CA03 modificación de propietario
+PASS CA04 alta de propiedad y código normalizado
+PASS CA05 código duplicado
+PASS CA06 alta y modificación de inquilino
+PASS CA07 cambio de dueño antes de contratos
+PASS CA08 contrato desde datos cargados por servicio
+PASS CA09 proteger titularidad histórica
+PASS CA10 editar dirección conserva contratos
+PASS CA11 baja lógica de propiedad
+PASS CA12 impedir contrato con propiedad inactiva
+PASS CA13 reactivar propiedad
+PASS CA14 impedir contrato con inquilino inactivo
+PASS CA15 conservar identidad y cuotas
+PASS CA16 reactivar inquilino
+PASS CA17 propietario inactivo al dar de alta propiedad
+PASS CA18 ocultar propiedades del dueño inactivo
+PASS CA19 historial cobrable tras bajas
+PASS CA20 reactivar propietario
+PASS CA21 documento obligatorio
+PASS CA22 nombre extenso
+PASS CA23 dirección obligatoria
+PASS CA24 propietario inexistente
+PASS CA25 persona inexistente
+PASS CA26 propiedad inexistente
+PASS CA27 Martillero no consulta catálogo
+PASS CA28 Martillero no guarda persona
+PASS CA29 Martillero no guarda propiedad
+PASS CA30 Martillero no da de baja persona
+PASS CA31 Martillero no da de baja propiedad
+PASS CA32 rechazos no alteran los datos
+PASS CA33 duplicado concurrente sin alta residual
+PASS CA34 selección ordenada conserva ID y estado
+PASS CA35 nuevo limpia ID y campos
+PASS CA36 formulario bloqueado durante operación
+PASS CA37 dueño por ID aunque esté inactivo
+PASS CA38 alta exige selección de dueño
+PASS CA39 contrato nuevo sin valores precargados
+PASS CA40 periodicidad requiere elección
+PASS CA41 limpieza conserva formulario vacío tras recarga
+RESULTADO: 41 verificaciones de datos básicos aprobadas.

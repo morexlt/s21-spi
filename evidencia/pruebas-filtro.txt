@@ -1,5 +1,5 @@
 2026-11-08
-Base aislada: propiera_ap4_revision_final_20261108
+Base aislada: propiera_ap4_archivos_pruebas_20261108
 
 PASS FI01 consulta vacía
 PASS FI02 todas las cuotas y opciones sin duplicados

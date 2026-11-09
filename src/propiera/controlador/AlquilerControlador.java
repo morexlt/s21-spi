@@ -9,7 +9,15 @@ import java.util.concurrent.ExecutionException;
 import java.util.function.Consumer;
 import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.nio.file.Path;
+import java.nio.file.Files;
+import java.util.Locale;
+import propiera.persistencia.ArchivoCuotas;
 import propiera.servicio.AlquilerService;
+import propiera.servicio.CatalogoService;
+import propiera.modelo.DatosCatalogo;
 import propiera.modelo.AltaContrato;
 import propiera.modelo.Cuota;
 import propiera.modelo.Opcion;
@@ -23,15 +31,17 @@ import propiera.vista.PrincipalVista;
 public class AlquilerControlador {
     private final AlquilerService servicio;
     private final AutenticacionService autenticacion;
+    private final CatalogoService catalogos;
     private final LoginVista login;
     private PrincipalVista ventana;
     private Usuario usuario;
 
     public AlquilerControlador(AlquilerService servicio,
-            AutenticacionService autenticacion, LoginVista login) {
+            AutenticacionService autenticacion, LoginVista login, CatalogoService catalogos) {
         this.servicio = servicio;
         this.autenticacion = autenticacion;
         this.login = login;
+        this.catalogos = catalogos;
     }
 
     public void iniciar() {
@@ -70,24 +80,29 @@ public class AlquilerControlador {
     private void abrirVentana() {
         ventana = new PrincipalVista(usuario);
         ventana.actualizar().addActionListener(evento -> actualizar());
+        ventana.exportar().addActionListener(evento -> exportarCuotas());
         ventana.cobrar().addActionListener(evento -> seleccionarCobro());
         ventana.confirmarAjuste().addActionListener(evento -> seleccionarAjuste());
         ventana.ajuste().guardar().addActionListener(evento -> guardarAjuste());
         ventana.contrato().guardar().addActionListener(evento -> guardarContrato());
         ventana.pago().guardar().addActionListener(evento -> guardarPago());
+        if (usuario.puedeCargar()) {
+            new CatalogoControlador(catalogos, ventana, usuario.id(), this::actualizar).iniciar();
+        }
         login.dispose();
         ventana.setVisible(true);
         actualizar();
     }
 
     private record Datos(List<Cuota> cuotas, List<Opcion> propiedades,
-                         List<Opcion> inquilinos) { }
+                         List<Opcion> inquilinos, DatosCatalogo catalogos) { }
 
     private void actualizar() {
         ejecutar(() -> new Datos(servicio.consultarCuotas(), servicio.propiedades(),
-                servicio.inquilinos()), datos -> {
+                servicio.inquilinos(), usuario.puedeCargar() ? catalogos.consultar(usuario.id()) : null), datos -> {
             ventana.modeloCuotas().actualizar(datos.cuotas());
             ventana.contrato().cargarOpciones(datos.propiedades(), datos.inquilinos());
+            if (datos.catalogos() != null) ventana.catalogos().cargar(datos.catalogos());
         });
     }
 
@@ -101,6 +116,34 @@ public class AlquilerControlador {
             ventana.pago().seleccionarCuota(cuota.id(), cuota.saldo().toPlainString());
             ventana.mostrarPago();
         }
+    }
+
+    private void exportarCuotas() {
+        Cuota cuota = ventana.cuotaSeleccionada();
+        if (cuota == null) {
+            mensaje("Seleccioná una cuota del contrato que querés exportar.");
+            return;
+        }
+        JFileChooser selector = new JFileChooser();
+        selector.setDialogTitle("Exportar cuotas del contrato " + cuota.contrato());
+        selector.setFileFilter(new FileNameExtensionFilter("Archivo de texto (*.txt)", "txt"));
+        selector.setAcceptAllFileFilterUsed(false);
+        selector.setSelectedFile(new java.io.File("cuotas-contrato-" + cuota.contrato() + ".txt"));
+        if (selector.showSaveDialog(ventana) != JFileChooser.APPROVE_OPTION) return;
+        Path elegido = selector.getSelectedFile().toPath();
+        if (!elegido.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".txt")) {
+            elegido = elegido.resolveSibling(elegido.getFileName() + ".txt");
+        }
+        Path destino = elegido;
+        boolean reemplazar = Files.exists(destino);
+        if (reemplazar && JOptionPane.showConfirmDialog(ventana,
+                "El archivo ya existe. ¿Querés reemplazarlo?", "Exportar cuotas",
+                JOptionPane.YES_NO_OPTION) != JOptionPane.YES_OPTION) return;
+        ejecutar(() -> {
+            var estado = servicio.consultarContrato(cuota.contrato(), usuario.id());
+            new ArchivoCuotas().guardar(destino, estado, reemplazar);
+            return destino.toAbsolutePath();
+        }, archivo -> mensaje("Archivo guardado en:\n" + archivo));
     }
 
     private void seleccionarAjuste() {
@@ -153,6 +196,7 @@ public class AlquilerControlador {
                 formulario.mora().trim());
             ejecutar(() -> servicio.registrarContrato(alta, usuario.id()), id -> {
                 mensaje("Contrato " + id + " guardado. Se generaron las cuotas mensuales.");
+                formulario.limpiar();
                 actualizar();
             });
         } catch (Exception error) {
@@ -220,6 +264,10 @@ public class AlquilerControlador {
             texto = "Revisá los campos numéricos.";
         } else if (causa instanceof java.sql.SQLIntegrityConstraintViolationException) {
             texto = "No se pudo guardar. Revisá la referencia del pago y los datos relacionados.";
+        } else if (causa instanceof java.nio.file.FileAlreadyExistsException) {
+            texto = "El archivo ya existe. Elegí otro nombre o confirmá que querés reemplazarlo.";
+        } else if (causa instanceof java.io.IOException) {
+            texto = "No se pudo guardar el archivo. Revisá la carpeta y los permisos de escritura.";
         } else if (causa instanceof java.sql.SQLException) {
             texto = "No se pudo completar la operación en MySQL. Revisá la conexión y volvé a intentar.";
         } else if (causa instanceof IllegalArgumentException || causa instanceof IllegalStateException) {

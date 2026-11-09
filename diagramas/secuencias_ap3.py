@@ -12,7 +12,8 @@ def fuente(tamano):
 
 
 def secuencia(archivo, nombres, pasos, nota):
-    imagen = Image.new('RGB', (1800, 920), 'white')
+    interfaz = archivo == '05_secuencia.png'
+    imagen = Image.new('RGB', (2160 if interfaz else 1800, 1040 if interfaz else 920), 'white')
     d = ImageDraw.Draw(imagen)
     xs = [190 + i * 355 for i in range(len(nombres))]
     cuotas = archivo == '08_secuencia_cuotas.png'
@@ -20,7 +21,7 @@ def secuencia(archivo, nombres, pasos, nota):
         inicio = 170 if cuotas and indice == 2 else 20
         d.rectangle((x - 170, inicio, x + 170, inicio + 80), fill=FONDO, outline=VERDE, width=2)
         d.multiline_text((x, inicio + 40), nombre, font=fuente(25), fill=AZUL, anchor='mm', align='center')
-        for y in range(inicio + 85, 810, 20):
+        for y in range(inicio + 85, 910 if interfaz else 810, 20):
             d.line((x, y, x, y + 10), fill='#72908D', width=2)
     if cuotas:
         d.rectangle((90, 300, 1760, 660), outline=VERDE, width=2)
@@ -54,22 +55,24 @@ def secuencia(archivo, nombres, pasos, nota):
         ancho = d.textlength(texto, font=fuente(23))
         d.rectangle((centro - ancho / 2 - 4, y - 32, centro + ancho / 2 + 4, y - 5), fill='white')
         d.text((centro, y - 20), texto, font=fuente(23), fill=AZUL, anchor='mm')
-    d.multiline_text((35, 840), nota, font=fuente(24), fill=AZUL, spacing=10)
+    d.multiline_text((35, 940 if interfaz else 840), nota, font=fuente(24), fill=AZUL, spacing=10)
     imagen.save(CARPETA / archivo)
 
 
-secuencia('05_secuencia.png', ['formulario:\nFormularioContrato', 'controlador:\nAlquilerControlador', 'servicio:\nAlquilerService', 'JOptionPane', 'ventana:\nPrincipalVista'], [
+secuencia('05_secuencia.png', ['formulario:\nFormularioContrato', 'controlador:\nAlquilerControlador', 'servicio:\nAlquilerService', 'catalogos:\nCatalogoService', 'JOptionPane', 'ventana:\nPrincipalVista'], [
     (0, 1, 'evento Guardar'),
     (1, 0, 'leer campos'),
     (0, 1, 'retorno: datos'),
     (1, 1, 'new AltaContrato(...)'),
     (1, 2, 'registrarContrato(alta, usuario)'),
     (2, 1, 'retorno: id del contrato (detalle en figura 8)'),
-    (1, 3, 'showMessageDialog(ventana, mensaje, ...)'),
+    (1, 4, 'showMessageDialog(ventana, mensaje, ...)'),
     (1, 1, 'actualizar()'),
     (1, 2, 'consultarCuotas(), propiedades(), inquilinos()'),
     (2, 1, 'retorno: listas actualizadas'),
-    (1, 4, 'actualizar tabla y catálogos del formulario'),
+    (1, 3, 'consultar(usuario)'),
+    (3, 1, 'retorno: DatosCatalogo'),
+    (1, 5, 'actualizar cuotas, selectores y datos básicos'),
 ], 'El Administrativo inicia el registro. El controlador crea AltaContrato con los datos ingresados.\nSwingWorker ejecuta el servicio en segundo plano; done() confirma el resultado y actualiza la vista.')
 
 secuencia('07_secuencia_transaccion.png', ['servicio:\nAlquilerService', 'baseDatos:\nBaseDatos', 'DriverManager', 'conexion:\nConnection', 'operaciones:\nOperacionDao'], [

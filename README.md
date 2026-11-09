@@ -7,7 +7,9 @@ Repositorio: https://github.com/morexlt/s21-spi
 
 ## Funciones
 
+- Administrar propietarios, propiedades e inquilinos: altas, modificaciones y bajas lógicas.
 - Registrar contratos y generar sus cuotas mensuales.
+- Exportar las cuotas de un contrato a un archivo TXT.
 - Consultar cuotas, vencimientos y saldos.
 - Registrar pagos parciales o completos, con capital y mora separados.
 - Confirmar el nuevo importe mensual de un tramo de ajuste.
@@ -44,12 +46,43 @@ Los importes se presentan con punto de miles y coma decimal, y se ordenan
 numéricamente. En los formularios se ingresan sin separador de miles.
 Las ventanas permiten desplazarse por los campos cuando se reduce su tamaño.
 
+## Datos básicos
+
+En Datos básicos, elegir Propietarios, Propiedades o Inquilinos. Nuevo limpia el
+formulario; seleccionar una fila permite modificar sus datos. Guardar registra
+los cambios. Documento y nombre son obligatorios para las personas; el contacto
+es opcional. La propiedad requiere código, dirección y un propietario activo.
+Los documentos y códigos son únicos, incluso entre registros inactivos.
+
+Dar de baja marca el registro como inactivo y conserva contratos, cuotas y cobros.
+Para reactivarlo, seleccionarlo, marcar Activo y guardar. Los inactivos no pueden
+participar en nuevos contratos; tampoco las propiedades de un dueño inactivo.
+Una propiedad con contratos registrados conserva su propietario: no se permite
+cambiarlo desde el ABM. Los cobros de contratos existentes continúan disponibles.
+Sólo Administrativo puede administrar estos datos; el servicio verifica su permiso.
+
+## Exportar cuotas
+
+Seleccionar una cuota en Cuotas y saldos y pulsar Exportar cuotas. La exportación
+incluye todas las cuotas del contrato de esa fila, aunque haya otros contratos
+en la misma propiedad o cambie el orden de la tabla. Está disponible para ambos
+perfiles. Se consulta MySQL nuevamente al exportar; no se usa una copia de los
+valores visibles para calcular el archivo.
+
+Elegir la ubicación del TXT. Si ya existe, se solicita confirmación antes de
+reemplazarlo. Cancelar no genera un archivo. El texto usa UTF-8 y conserva tildes
+y eñes. Incluye propiedad, propietario, inquilino, vigencia, cuotas, vencimientos,
+capital cobrado, mora cobrada y saldo. Las cuotas pendientes de ajuste se señalan
+sin importe; no se consideran de valor cero ni se suman al saldo confirmado.
+La mora se informa por separado. El archivo se termina de escribir en un temporal
+antes de moverlo al destino, para conservar el archivo anterior ante un error.
+
 ## Organización MVC
 
 ```
 src/propiera/
   PropieraApp.java       inicio de la aplicación
-  modelo/               datos del usuario, contrato, cuota y opciones
+  modelo/               datos del usuario, participantes, propiedades, contratos y cuotas
   vista/                ventanas, formularios y modelo de la tabla Swing
   controlador/          acciones de los botones y coordinación de las vistas
   servicio/             validaciones y operaciones del negocio
@@ -128,7 +161,10 @@ El proyecto también se puede importar con pom.xml en IntelliJ IDEA o Eclipse.
 
 ## Probar la aplicación
 
-Ingresar como administrativo y revisar las cuatro pestañas.
+Ingresar como administrativo y revisar las cinco pestañas.
+En Datos básicos se pueden cargar primero el propietario, su propiedad y el inquilino.
+Los registros nuevos quedan disponibles en los selectores del contrato.
+El formulario Registrar contrato comienza vacío y se limpia después de guardar.
 
 1. En Registrar contrato, elegir propiedad e inquilino, completar la vigencia,
    importe, comisión y condición de mora, y guardar.
@@ -158,6 +194,7 @@ java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasSwing
 java -cp 'build/classes:lib/*' propiera.PruebasPoo
 java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasAjuste
 java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasFiltro
+java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasCatalogos
 ```
 
 En Windows el separador del classpath es punto y coma. En macOS se puede usar
@@ -195,3 +232,14 @@ El conector JDBC se descarga en lib/ sólo si falta. El paquete de entrega
 contiene las fuentes, los scripts SQL, las pruebas y los diagramas.
 Las dependencias binarias, los archivos compilados y las credenciales
 no forman parte del paquete.
+
+PruebasCatalogos comprueba altas, modificaciones, bajas lógicas, reactivaciones,
+permisos, duplicados concurrentes, conservación del historial y formularios vacíos.
+Para probar los archivos, usar otra base exclusiva con SQL 01, 02 y 05 y ejecutar:
+
+```sh
+java -Djava.awt.headless=true -cp 'build/classes:lib/*' propiera.PruebasExportacion
+```
+
+Esta prueba escribe y vuelve a leer TXT en una carpeta temporal; comprueba UTF-8,
+totales, cuotas pendientes, autorización, reemplazo y errores de escritura.
